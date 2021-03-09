@@ -1,0 +1,1842 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/01/2018  16:30:48  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\LF.obj, .\Objects\main.obj, .\Objects\RF.obj, .\Objects\SP37.obj, .\Objects\uart.o
+>> bj, .\Objects\STARTUP.obj, .\include\SP37_ROMLibrary.LIB TO .\Objects\LF_WakeUp_RF_Telegram PRINT (.\Listings\LF_Wake
+>> Up_RF_Telegram.m51) RAMSIZE (256) CODE (0X4000-0X57FF)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\LF.obj (LF)
+  .\Objects\main.obj (MAIN)
+  .\Objects\RF.obj (RF)
+  .\Objects\SP37.obj (SP37)
+  .\Objects\uart.obj (UART)
+  .\Objects\STARTUP.obj (SEG_C_STARTUP)
+  .\include\SP37_ROMLibrary.LIB (LIB_CRC_BAICHEVA_CALC)
+  .\include\SP37_ROMLibrary.LIB (LIB_CRC8)
+  .\include\SP37_ROMLibrary.LIB (LIB_LFBAUDRATECALIB)
+  .\include\SP37_ROMLibrary.LIB (LIB_MEASACCELERATION)
+  .\include\SP37_ROMLibrary.LIB (LIB_MEASPRESSURE)
+  .\include\SP37_ROMLibrary.LIB (LIB_MEASVOLTAGE)
+  .\include\SP37_ROMLibrary.LIB (LIB_MEASTEMPERATURE)
+  .\include\SP37_ROMLibrary.LIB (LIB_POWERDOWN)
+  .\include\SP37_ROMLibrary.LIB (LIB_READID)
+  .\include\SP37_ROMLibrary.LIB (LIB_SCALE_PRESSURE)
+  .\include\SP37_ROMLibrary.LIB (LIB_SEND_RF_TELEGRAM)
+  .\include\SP37_ROMLibrary.LIB (LIB_STARTXTALOSC)
+  .\include\SP37_ROMLibrary.LIB (LIB_STOPXTALOSC)
+  .\include\SP37_ROMLibrary.LIB (LIB_VCOTUNING)
+  .\include\SP37_ROMLibrary.LIB (LIB_UDIVINTINT)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?ISTPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?ULSHR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (PRINTF)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CCASE)
+
+
+LINK MAP OF MODULE:  .\Objects\LF_WakeUp_RF_Telegram (LF)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0016H     UNIT         _DATA_GROUP_
+            DATA    001EH     0002H     UNIT         ?DT?_SCALE_PRESSURE_FOR_RF?RF
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+                    0021H.1   0000H.7                *** GAP ***
+            DATA    0022H     0020H     UNIT         ?DT?LF
+            IDATA   0042H     0029H     UNIT         _IDATA_GROUP_
+                    006BH     0035H                  *** GAP ***
+            IDATA   00A0H     0020H     ABSOLUTE     
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 2
+
+
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+                    0000H     4000H                  *** GAP ***
+            CODE    4000H     0006H     ABSOLUTE     
+            CODE    4006H     035CH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    4362H     01B6H     UNIT         ?C?LIB_CODE
+            CODE    4518H     008DH     UNIT         ?PR?SEND_RF?RF
+            CODE    45A5H     0086H     UNIT         ?PR?MAIN?MAIN
+            CODE    462BH     0052H     UNIT         ?PR?_PUTCHAR?UART
+            CODE    467DH     0049H     UNIT         ?PR?LF_DATARECEIVE?LF
+            CODE    46C6H     0040H     UNIT         ?CO?MAIN
+            CODE    4706H     0036H     UNIT         SCALE_PRESSURE
+            CODE    473CH     002CH     UNIT         ?PR?_MEASURE_PRESSURE?SP37
+            CODE    4768H     002CH     UNIT         ?PR?_MEASURE_ACCELERATION?SP37
+            CODE    4794H     0029H     UNIT         ?PR?_SEND_RF_DATA?SP37
+            CODE    47BDH     0026H     UNIT         ?PR?_MEASURE_TEMPERATURE?SP37
+            CODE    47E3H     0026H     UNIT         ?PR?_MEASURE_SUPPLY_VOLTAGE?SP37
+            CODE    4809H     0024H     UNIT         ?PR?LF_CONFIGURE_TELEGRAM?LF
+            CODE    482DH     0019H     UNIT         ?PR?LF_CONFIGURE_CARRIER_DETECT?LF
+            CODE    4846H     0018H     UNIT         ?CO?RF
+            CODE    485EH     0015H     UNIT         MEASUREACCEL
+            CODE    4873H     0015H     UNIT         MEASURE_PRESS
+            CODE    4888H     0011H     UNIT         MEASTEMP
+            CODE    4899H     000FH     UNIT         ?PR?STOPXTALOSCILLATOR?SP37
+            CODE    48A8H     000FH     UNIT         ?PR?_READ_SP37_ID?SP37
+            CODE    48B7H     000FH     UNIT         ?PR?SP37_INITRANDOM?SP37
+            CODE    48C6H     000EH     UNIT         ?PR?UART_INIT?UART
+            CODE    48D4H     000BH     UNIT         ?PR?_PP2?UART
+            CODE    48DFH     000AH     UNIT         ?PR?_SCALE_PRESSURE_FOR_RF?RF
+            CODE    48E9H     000AH     UNIT         ?PR?_CRC8_CALCULATE?SP37
+            CODE    48F3H     000AH     UNIT         ?PR?_CRC_BAICHEVA_CALCULATE?SP37
+            CODE    48FDH     000AH     UNIT         ?PR?SEND_RF_INIT?SP37
+            CODE    4907H     000AH     UNIT         START_XTAL_OSC
+            CODE    4911H     0009H     UNIT         SELECTVCOCURVE
+            CODE    491AH     0008H     UNIT         SEND_RF_TELEGRAM
+            CODE    4922H     0007H     UNIT         ?PR?READ_TYRE_POSITION?SP37
+            CODE    4929H     0006H     UNIT         ?PR?STARTXTALOSCILLATOR?SP37
+            CODE    492FH     0005H     UNIT         LF_BAUDRATECALIB
+            CODE    4934H     0005H     UNIT         STOP_XTAL_OSC
+            CODE    4939H     0003H     UNIT         CRC_BAICHEVA_CALC
+            CODE    493CH     0003H     UNIT         CRC8
+            CODE    493FH     0003H     UNIT         MEASSUPPVOLTAGE
+            CODE    4942H     0003H     UNIT         POWDWN
+            CODE    4945H     0003H     UNIT         READSENSORID
+            CODE    4948H     0003H     UNIT         UINTDIV
+                    494BH     0EAFH                  *** GAP ***
+            CODE    57FAH     0003H     ABSOLUTE     
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\LF_WakeUp_RF_Telegram (LF)
+
+
+SEGMENT                                       BIT_GROUP          DATA_GROUP          IDATA_GROUP
+  +--> CALLED SEGMENT                      START    LENGTH     START    LENGTH     START    LENGTH
+--------------------------------------------------------------------------------------------------
+?PR?MAIN?MAIN                              -----    -----      0008H    0002H      0042H    0011H
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 3
+
+
+  +--> ?PR?LF_CONFIGURE_TELEGRAM?LF
+  +--> ?PR?SP37_INITRANDOM?SP37
+  +--> ?PR?UART_INIT?UART
+  +--> ?CO?MAIN
+  +--> ?PR?PRINTF?PRINTF
+  +--> ?PR?SEND_RF_INIT?SP37
+  +--> ?PR?_READ_SP37_ID?SP37
+  +--> ?PR?READ_TYRE_POSITION?SP37
+  +--> ?PR?_MEASURE_PRESSURE?SP37
+  +--> ?PR?_MEASURE_TEMPERATURE?SP37
+  +--> ?PR?_MEASURE_ACCELERATION?SP37
+  +--> ?PR?_MEASURE_SUPPLY_VOLTAGE?SP37
+  +--> ?PR?SEND_RF?RF
+
+?PR?SP37_INITRANDOM?SP37                   -----    -----      000AH    0005H      -----    -----
+
+?PR?UART_INIT?UART                         -----    -----      -----    -----      -----    -----
+  +--> ?PR?_PP2?UART
+
+?PR?PRINTF?PRINTF                          0020H.0  0001H.1    000AH    0014H      -----    -----
+  +--> ?PR?_PUTCHAR?UART
+
+?PR?_PUTCHAR?UART                          -----    -----      -----    -----      -----    -----
+  +--> ?PR?_PP2?UART
+
+?PR?_MEASURE_PRESSURE?SP37                 -----    -----      000AH    0003H      0053H    0006H
+
+?PR?_MEASURE_TEMPERATURE?SP37              -----    -----      000AH    0003H      0053H    0004H
+
+?PR?_MEASURE_ACCELERATION?SP37             -----    -----      000AH    0003H      0053H    0006H
+
+?PR?_MEASURE_SUPPLY_VOLTAGE?SP37           -----    -----      000AH    0003H      0053H    0004H
+
+?PR?SEND_RF?RF                             -----    -----      000AH    0011H      0053H    0018H
+  +--> ?CO?RF
+  +--> ?PR?_CRC_BAICHEVA_CALCULATE?SP37
+  +--> ?PR?_SEND_RF_DATA?SP37
+
+?PR?_SEND_RF_DATA?SP37                     -----    -----      001BH    0001H      -----    -----
+  +--> ?PR?STARTXTALOSCILLATOR?SP37
+  +--> ?PR?STOPXTALOSCILLATOR?SP37
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\LF_WakeUp_RF_Telegram (LF)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        LF
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0098H         PUBLIC        LFRXC
+  D:00A5H         PUBLIC        LFRXD
+  D:00B2H         PUBLIC        LFCDFLT
+  D:00D8H         PUBLIC        CFG2
+  C:482DH         PUBLIC        LF_Configure_Carrier_Detect
+  D:0022H         PUBLIC        LFData
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 4
+
+
+  D:00A4H         PUBLIC        LFRXS
+  D:00B5H         PUBLIC        LFCDM0
+  B:00F8H.5       PUBLIC        IDLE
+  C:4809H         PUBLIC        LF_Configure_Telegram
+  D:00C7H         PUBLIC        LFPCFG
+  D:0089H         PUBLIC        TMOD
+  C:467DH         PUBLIC        LF_DataReceive
+  D:00BCH         PUBLIC        ITPR
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  D:00CDH         PUBLIC        LFP0H
+  D:00D1H         PUBLIC        REF
+  D:00CCH         PUBLIC        LFP0L
+  D:00B7H         PUBLIC        LFRX0
+  D:00B6H         PUBLIC        LFRX1
+  D:00C1H         PUBLIC        WUM
+  B:0088H.0       PUBLIC        T0RUN
+  -------         PROC          LF_CONFIGURE_CARRIER_DETECT
+  C:482DH         LINE#         15
+  C:482DH         LINE#         16
+  C:482DH         LINE#         17
+  C:4830H         LINE#         19
+  C:4837H         LINE#         28
+  C:483AH         LINE#         29
+  C:483DH         LINE#         37
+  C:4840H         LINE#         38
+  C:4843H         LINE#         39
+  C:4845H         LINE#         43
+  -------         ENDPROC       LF_CONFIGURE_CARRIER_DETECT
+  -------         PROC          LF_CONFIGURE_TELEGRAM
+  C:4809H         LINE#         46
+  C:4809H         LINE#         47
+  C:4809H         LINE#         48
+  C:480CH         LINE#         49
+  C:4812H         LINE#         51
+  C:4815H         LINE#         53
+  C:4818H         LINE#         54
+  C:481BH         LINE#         55
+  C:481EH         LINE#         59
+  C:4823H         LINE#         61
+  C:482AH         LINE#         62
+  -------         ENDPROC       LF_CONFIGURE_TELEGRAM
+  -------         PROC          LF_DATARECEIVE
+  -------         DO            
+  D:0005H         SYMBOL        RECEIVING
+  D:0005H         SYMBOL        i
+  D:0007H         SYMBOL        index
+  D:0006H         SYMBOL        store
+  -------         ENDDO         
+  C:467DH         LINE#         67
+  C:467DH         LINE#         68
+  C:467DH         LINE#         74
+  C:467DH         LINE#         75
+  C:4686H         LINE#         78
+  C:468BH         LINE#         79
+  C:4693H         LINE#         81
+  C:4695H         LINE#         82
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 5
+
+
+  C:4697H         LINE#         83
+  C:469AH         LINE#         84
+  C:469AH         LINE#         85
+  C:469DH         LINE#         86
+  C:469FH         LINE#         87
+  C:46A2H         LINE#         88
+  C:46A5H         LINE#         89
+  C:46A8H         LINE#         90
+  C:46AAH         LINE#         91
+  C:46ACH         LINE#         92
+  C:46AEH         LINE#         94
+  C:46B2H         LINE#         95
+  C:46B2H         LINE#         96
+  C:46BBH         LINE#         97
+  C:46BDH         LINE#         99
+  C:46BDH         LINE#         100
+  C:46C1H         LINE#         101
+  C:46C1H         LINE#         102
+  C:46C3H         LINE#         103
+  C:46C3H         LINE#         104
+  C:46C5H         LINE#         106
+  C:46C5H         LINE#         107
+  -------         ENDPROC       LF_DATARECEIVE
+  -------         ENDMOD        LF
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:45A5H         PUBLIC        MAIN
+  D:00C0H         PUBLIC        WUF
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        store_wuf
+  D:0007H         SYMBOL        StatusByte
+  I:0042H         SYMBOL        t_sp37
+  D:0009H         SYMBOL        randtemp
+  -------         ENDDO         
+  C:45A5H         LINE#         39
+  C:45A5H         LINE#         40
+  C:45A5H         LINE#         44
+  C:45A8H         LINE#         46
+  C:45ABH         LINE#         48
+  C:45AFH         LINE#         50
+  C:45B2H         LINE#         53
+  C:45B5H         LINE#         54
+  C:45B5H         LINE#         55
+  C:45BAH         LINE#         58
+  C:45BDH         LINE#         59
+  C:45C6H         LINE#         62
+  C:45C9H         LINE#         64
+  C:45D0H         LINE#         65
+  C:45D5H         LINE#         66
+  C:45DCH         LINE#         68
+  C:45E5H         LINE#         69
+  C:45EEH         LINE#         70
+  C:45F7H         LINE#         71
+  C:4600H         LINE#         73
+  C:4616H         LINE#         75
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 6
+
+
+  C:461BH         LINE#         76
+  C:4621H         LINE#         78
+  C:4628H         LINE#         79
+  C:4628H         LINE#         81
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        RF
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:4518H         PUBLIC        Send_RF
+  C:48DFH         PUBLIC        _Scale_Pressure_For_RF
+  C:4846H         SYMBOL        _?ix1000
+  -------         PROC          _SCALE_PRESSURE_FOR_RF
+  D:001EH         SYMBOL        Measurement_Result
+  C:48DFH         LINE#         9
+  C:48E3H         LINE#         10
+  C:48E3H         LINE#         11
+  C:48E8H         LINE#         12
+  -------         ENDPROC       _SCALE_PRESSURE_FOR_RF
+  -------         PROC          SEND_RF
+  D:000AH         SYMBOL        t_sp37_data
+  -------         DO            
+  I:0053H         SYMBOL        RF_Array
+  -------         ENDDO         
+  C:4518H         LINE#         32
+  C:4518H         LINE#         33
+  C:4518H         LINE#         35
+  C:452BH         LINE#         74
+  C:453CH         LINE#         75
+  C:454DH         LINE#         76
+  C:455EH         LINE#         77
+  C:4561H         LINE#         78
+  C:4564H         LINE#         79
+  C:456DH         LINE#         80
+  C:4570H         LINE#         81
+  C:4579H         LINE#         82
+  C:457CH         LINE#         83
+  C:4585H         LINE#         84
+  C:4588H         LINE#         85
+  C:4591H         LINE#         86
+  C:4594H         LINE#         88
+  C:459FH         LINE#         90
+  C:45A4H         LINE#         91
+  -------         ENDPROC       SEND_RF
+  -------         ENDMOD        RF
+
+  -------         MODULE        SP37
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:47E3H         PUBLIC        _Measure_Supply_Voltage
+  C:48E9H         PUBLIC        _CRC8_Calculate
+  C:4768H         PUBLIC        _Measure_Acceleration
+  C:473CH         PUBLIC        _Measure_Pressure
+  D:00ABH         PUBLIC        RNGD
+  D:0089H         PUBLIC        TMOD
+  C:4922H         PUBLIC        Read_Tyre_Position
+  D:00AEH         PUBLIC        RFTX
+  C:48F3H         PUBLIC        _CRC_Baicheva_Calculate
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 7
+
+
+  C:47BDH         PUBLIC        _Measure_Temperature
+  C:4929H         PUBLIC        StartXtalOscillator
+  C:48A8H         PUBLIC        _Read_SP37_ID
+  D:00C8H         PUBLIC        RFC
+  C:4794H         PUBLIC        _Send_RF_Data
+  C:4899H         PUBLIC        StopXtalOscillator
+  C:48B7H         PUBLIC        SP37_InitRandom
+  D:00C4H         PUBLIC        XTAL0
+  D:00C3H         PUBLIC        XTAL1
+  D:00CBH         PUBLIC        RFS
+  C:48FDH         PUBLIC        Send_RF_Init
+  -------         PROC          _MEASURE_PRESSURE
+  D:000AH         SYMBOL        Pressure_VAL
+  -------         DO            
+  D:0006H         SYMBOL        SensorConfig
+  D:0005H         SYMBOL        SampleRate
+  D:0007H         SYMBOL        StatusByte
+  I:0053H         SYMBOL        Press_Result
+  -------         ENDDO         
+  C:473CH         LINE#         12
+  C:4742H         LINE#         13
+  C:4742H         LINE#         15
+  C:4746H         LINE#         18
+  C:4748H         LINE#         27
+  C:474DH         LINE#         29
+  C:4750H         LINE#         30
+  C:4750H         LINE#         31
+  C:4762H         LINE#         32
+  C:4765H         LINE#         33
+  C:4765H         LINE#         35
+  C:4765H         LINE#         39
+  C:4767H         LINE#         40
+  C:4767H         LINE#         41
+  -------         ENDPROC       _MEASURE_PRESSURE
+  -------         PROC          _MEASURE_ACCELERATION
+  D:000AH         SYMBOL        Acceleration_VAL
+  -------         DO            
+  D:0006H         SYMBOL        SensorConfig
+  D:0005H         SYMBOL        SampRate
+  D:0007H         SYMBOL        StatusByte
+  I:0053H         SYMBOL        AccelResult
+  -------         ENDDO         
+  C:4768H         LINE#         49
+  C:476EH         LINE#         50
+  C:476EH         LINE#         52
+  C:4772H         LINE#         54
+  C:4774H         LINE#         62
+  C:4779H         LINE#         63
+  C:477CH         LINE#         64
+  C:477CH         LINE#         65
+  C:478EH         LINE#         66
+  C:4791H         LINE#         67
+  C:4791H         LINE#         69
+  C:4791H         LINE#         73
+  C:4793H         LINE#         74
+  C:4793H         LINE#         75
+  -------         ENDPROC       _MEASURE_ACCELERATION
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 8
+
+
+  -------         PROC          _MEASURE_TEMPERATURE
+  D:000AH         SYMBOL        Temperature_VAL
+  -------         DO            
+  D:0007H         SYMBOL        StatusByte
+  I:0053H         SYMBOL        Temp_Result
+  -------         ENDDO         
+  C:47BDH         LINE#         83
+  C:47C3H         LINE#         84
+  C:47C3H         LINE#         91
+  C:47C8H         LINE#         92
+  C:47CBH         LINE#         93
+  C:47CBH         LINE#         94
+  C:47DDH         LINE#         95
+  C:47E0H         LINE#         96
+  C:47E0H         LINE#         98
+  C:47E0H         LINE#         99
+  C:47E2H         LINE#         100
+  C:47E2H         LINE#         101
+  -------         ENDPROC       _MEASURE_TEMPERATURE
+  -------         PROC          _MEASURE_SUPPLY_VOLTAGE
+  D:000AH         SYMBOL        Voltage_VAL
+  -------         DO            
+  D:0007H         SYMBOL        StatusByte
+  I:0053H         SYMBOL        Volt_Result
+  -------         ENDDO         
+  C:47E3H         LINE#         109
+  C:47E9H         LINE#         110
+  C:47E9H         LINE#         118
+  C:47EEH         LINE#         119
+  C:47F1H         LINE#         120
+  C:47F1H         LINE#         121
+  C:4803H         LINE#         122
+  C:4806H         LINE#         123
+  C:4806H         LINE#         125
+  C:4806H         LINE#         126
+  C:4808H         LINE#         127
+  C:4808H         LINE#         128
+  -------         ENDPROC       _MEASURE_SUPPLY_VOLTAGE
+  -------         PROC          STARTXTALOSCILLATOR
+  -------         DO            
+  D:0007H         SYMBOL        StatusByte
+  D:0007H         SYMBOL        Delay
+  -------         ENDDO         
+  C:4929H         LINE#         134
+  C:4929H         LINE#         135
+  C:4929H         LINE#         139
+  C:492BH         LINE#         141
+  C:492EH         LINE#         142
+  C:492EH         LINE#         143
+  -------         ENDPROC       STARTXTALOSCILLATOR
+  -------         PROC          STOPXTALOSCILLATOR
+  -------         DO            
+  D:0007H         SYMBOL        StatusByte
+  -------         ENDDO         
+  C:4899H         LINE#         152
+  C:4899H         LINE#         153
+  C:4899H         LINE#         156
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 9
+
+
+  C:489EH         LINE#         157
+  C:48A1H         LINE#         158
+  C:48A4H         LINE#         159
+  C:48A7H         LINE#         160
+  C:48A7H         LINE#         161
+  -------         ENDPROC       STOPXTALOSCILLATOR
+  -------         PROC          _CRC8_CALCULATE
+  D:0005H         SYMBOL        BlockStart
+  D:0003H         SYMBOL        BlockLength
+  C:48E9H         LINE#         166
+  C:48EDH         LINE#         167
+  C:48EDH         LINE#         168
+  C:48F2H         LINE#         169
+  -------         ENDPROC       _CRC8_CALCULATE
+  -------         PROC          _CRC_BAICHEVA_CALCULATE
+  D:0005H         SYMBOL        BlockStart
+  D:0003H         SYMBOL        BlockLength
+  C:48F3H         LINE#         175
+  C:48F7H         LINE#         176
+  C:48F7H         LINE#         177
+  C:48FCH         LINE#         178
+  -------         ENDPROC       _CRC_BAICHEVA_CALCULATE
+  -------         PROC          _READ_SP37_ID
+  D:0000H         SYMBOL        IDH
+  D:0005H         SYMBOL        IDL
+  C:48A8H         LINE#         182
+  C:48AAH         LINE#         183
+  C:48AAH         LINE#         184
+  C:48B0H         LINE#         185
+  C:48B6H         LINE#         186
+  -------         ENDPROC       _READ_SP37_ID
+  -------         PROC          READ_TYRE_POSITION
+  C:4922H         LINE#         190
+  C:4922H         LINE#         191
+  C:4922H         LINE#         192
+  C:4928H         LINE#         193
+  -------         ENDPROC       READ_TYRE_POSITION
+  -------         PROC          SP37_INITRANDOM
+  -------         DO            
+  D:000AH         SYMBOL        ID_Result
+  D:0007H         SYMBOL        ID_LSB
+  -------         ENDDO         
+  C:48B7H         LINE#         199
+  C:48B7H         LINE#         200
+  C:48B7H         LINE#         204
+  C:48BCH         LINE#         206
+  C:48BEH         LINE#         209
+  C:48C1H         LINE#         210
+  C:48C3H         LINE#         211
+  C:48C3H         LINE#         213
+  C:48C5H         LINE#         214
+  -------         ENDPROC       SP37_INITRANDOM
+  -------         PROC          SEND_RF_INIT
+  C:48FDH         LINE#         216
+  C:48FDH         LINE#         217
+  C:48FDH         LINE#         222
+  C:4900H         LINE#         227
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 10
+
+
+  C:4903H         LINE#         228
+  C:4906H         LINE#         229
+  -------         ENDPROC       SEND_RF_INIT
+  -------         PROC          _SEND_RF_DATA
+  D:001BH         SYMBOL        descriptorPtr
+  -------         DO            
+  D:0007H         SYMBOL        StatusByte
+  -------         ENDDO         
+  C:4794H         LINE#         239
+  C:4796H         LINE#         240
+  C:4796H         LINE#         243
+  C:4799H         LINE#         246
+  C:479CH         LINE#         247
+  C:479FH         LINE#         248
+  C:47A2H         LINE#         250
+  C:47ABH         LINE#         251
+  C:47AEH         LINE#         252
+  C:47B1H         LINE#         254
+  C:47B4H         LINE#         255
+  C:47B7H         LINE#         256
+  C:47BAH         LINE#         258
+  C:47BCH         LINE#         259
+  -------         ENDPROC       _SEND_RF_DATA
+  -------         ENDMOD        SP37
+
+  -------         MODULE        UART
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:48C6H         PUBLIC        Uart_Init
+  B:00F8H.5       PUBLIC        IDLE
+  D:0089H         PUBLIC        TMOD
+  B:0088H.1       PUBLIC        T0FULL
+  D:0093H         PUBLIC        P1SENS
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  C:48D4H         SYMBOL        _PP2
+  D:0091H         PUBLIC        P1DIR
+  D:0090H         PUBLIC        P1OUT
+  B:0088H.0       PUBLIC        T0RUN
+  C:462BH         PUBLIC        _putchar
+  -------         PROC          UART_INIT
+  C:48C6H         LINE#         17
+  C:48C6H         LINE#         18
+  C:48C6H         LINE#         21
+  C:48C9H         LINE#         22
+  C:48CCH         LINE#         23
+  C:48CFH         LINE#         25
+  -------         ENDPROC       UART_INIT
+  -------         PROC          _PP2
+  D:0007H         SYMBOL        HIGH_Or_LOW
+  C:48D4H         LINE#         28
+  C:48D4H         LINE#         29
+  C:48D4H         LINE#         30
+  C:48D7H         LINE#         31
+  C:48DBH         LINE#         33
+  C:48DEH         LINE#         34
+  -------         ENDPROC       _PP2
+  -------         PROC          _PUTCHAR
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 11
+
+
+  D:0006H         SYMBOL        char_to_send
+  -------         DO            
+  D:0002H         SYMBOL        i
+  D:0005H         SYMBOL        TMOD_old
+  D:0003H         SYMBOL        TL0_old
+  D:0004H         SYMBOL        TH0_old
+  -------         ENDDO         
+  C:462BH         LINE#         36
+  C:462DH         LINE#         37
+  C:462DH         LINE#         42
+  C:462FH         LINE#         43
+  C:4631H         LINE#         44
+  C:4633H         LINE#         46
+  C:4636H         LINE#         49
+  C:4639H         LINE#         50
+  C:463CH         LINE#         53
+  C:4641H         LINE#         54
+  C:4643H         LINE#         55
+  C:4645H         LINE#         56
+  C:4647H         LINE#         59
+  C:464BH         LINE#         60
+  C:464DH         LINE#         61
+  C:464FH         LINE#         64
+  C:4651H         LINE#         65
+  C:4651H         LINE#         66
+  C:4655H         LINE#         67
+  C:4659H         LINE#         69
+  C:465EH         LINE#         70
+  C:4662H         LINE#         71
+  C:4664H         LINE#         72
+  C:4666H         LINE#         73
+  C:466AH         LINE#         76
+  C:466FH         LINE#         77
+  C:4671H         LINE#         78
+  C:4673H         LINE#         81
+  C:4675H         LINE#         82
+  C:4677H         LINE#         83
+  C:4679H         LINE#         84
+  C:467BH         LINE#         86
+  C:467CH         LINE#         87
+  -------         ENDPROC       _PUTCHAR
+  -------         ENDMOD        UART
+
+  -------         MODULE        SEG_C_STARTUP
+  C:4000H         PUBLIC        ?C_STARTUP
+  I:00A0H         SYMBOL        ?STACK
+  N:0000H         SYMBOL        SEG_C_STARTUP
+  D:0081H         SYMBOL        SP
+  C:4000H         LINE#         83
+  C:4003H         LINE#         84
+  -------         ENDMOD        SEG_C_STARTUP
+
+  -------         MODULE        LIB_CRC_BAICHEVA_CALC
+  C:4939H         SEGMENT       CRC_BAICHEVA_CALC
+  C:4939H         PUBLIC        _CRC_BAICHEVA_CALC
+  C:4939H         LINE#         28
+  -------         ENDMOD        LIB_CRC_BAICHEVA_CALC
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 12
+
+
+
+  -------         MODULE        LIB_CRC8
+  C:493CH         SEGMENT       CRC8
+  C:493CH         PUBLIC        _CRC8_CALC
+  C:493CH         LINE#         32
+  -------         ENDMOD        LIB_CRC8
+
+  -------         MODULE        LIB_LFBAUDRATECALIB
+  C:492FH         SEGMENT       LF_BAUDRATECALIB
+  C:492FH         PUBLIC        _LFBAUDRATECALIBRATION
+  N:00E2H         SYMBOL        LFARRAY
+  C:492FH         LINE#         36
+  C:4931H         LINE#         37
+  -------         ENDMOD        LIB_LFBAUDRATECALIB
+
+  -------         MODULE        LIB_MEASACCELERATION
+  C:485EH         SEGMENT       MEASUREACCEL
+  C:485EH         PUBLIC        _MEAS_ACCELERATION
+  D:00DBH         SYMBOL        ADCC0
+  D:00DCH         SYMBOL        ADCC1
+  D:00D5H         SYMBOL        ADCDH
+  D:00D4H         SYMBOL        ADCDL
+  D:00D2H         SYMBOL        ADCM
+  D:00DAH         SYMBOL        ADCOFF
+  D:00D3H         SYMBOL        ADCS
+  D:00DDH         SYMBOL        ADWBC
+  B:00E8H.3       SYMBOL        ADWBEN
+  D:00EDH         SYMBOL        BRD
+  B:0098H.7       SYMBOL        CDRECAL
+  D:00F8H         SYMBOL        CFG0
+  D:00E8H         SYMBOL        CFG1
+  D:00D8H         SYMBOL        CFG2
+  D:00E7H         SYMBOL        CFGA
+  B:00F8H.0       SYMBOL        CLKSEL
+  D:00ACH         SYMBOL        CRC0
+  D:00ADH         SYMBOL        CRC1
+  D:00A9H         SYMBOL        CRCC
+  D:00AAH         SYMBOL        CRCD
+  D:0095H         SYMBOL        DBCH0
+  D:009DH         SYMBOL        DBCH1
+  D:0094H         SYMBOL        DBCL0
+  D:009CH         SYMBOL        DBCL1
+  D:0097H         SYMBOL        DBTH0
+  D:009FH         SYMBOL        DBTH1
+  D:0096H         SYMBOL        DBTL0
+  D:009EH         SYMBOL        DBTL1
+  B:0098H.6       SYMBOL        DISAGC
+  D:00B9H         SYMBOL        DIVIC
+  D:00D9H         SYMBOL        DSR
+  B:0098H.2       SYMBOL        ENLFRX
+  B:0098H.3       SYMBOL        ENOOTIM
+  B:00C8H.0       SYMBOL        ENPA
+  B:00C8H.1       SYMBOL        ENPLL
+  B:00C8H.7       SYMBOL        ENPLLMON
+  B:00F8H.4       SYMBOL        ENXOSC
+  B:00C0H.1       SYMBOL        EXT_FLAG
+  D:00E1H         SYMBOL        FCPP0
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 13
+
+
+  D:00E2H         SYMBOL        FCPP1
+  D:00EAH         SYMBOL        FCS
+  D:00E3H         SYMBOL        FCSERM
+  D:00E9H         SYMBOL        FCSP
+  D:00E5H         SYMBOL        FCSS
+  D:00E4H         SYMBOL        FCTKAS
+  B:00F8H.3       SYMBOL        FTM
+  D:00B8H         SYMBOL        GPR0
+  D:00B0H         SYMBOL        GPR1
+  D:00A8H         SYMBOL        GPR2
+  D:00F1H         SYMBOL        GPR3
+  D:00F2H         SYMBOL        GPR4
+  D:00F3H         SYMBOL        GPR5
+  D:00F5H         SYMBOL        GPR6
+  D:00F6H         SYMBOL        GPR7
+  D:00F7H         SYMBOL        GPR8
+  D:00F9H         SYMBOL        GPR9
+  D:00FAH         SYMBOL        GPRA
+  D:00FBH         SYMBOL        GPRB
+  D:00FCH         SYMBOL        GPRC
+  D:00FDH         SYMBOL        GPRD
+  D:00FEH         SYMBOL        GPRE
+  D:00FFH         SYMBOL        GPRF
+  D:009AH         SYMBOL        I2CD
+  B:00E8H.6       SYMBOL        I2CEN
+  B:00D8H.6       SYMBOL        I2CGCEN
+  D:009BH         SYMBOL        I2CS
+  B:00F8H.5       SYMBOL        IDLE
+  B:00E8H.0       SYMBOL        ITEN
+  B:00C0H.0       SYMBOL        ITIM_FLAG
+  B:00E8H.1       SYMBOL        ITINIT
+  D:00BBH         SYMBOL        ITPH
+  D:00BAH         SYMBOL        ITPL
+  D:00BCH         SYMBOL        ITPR
+  B:00E8H.2       SYMBOL        ITRD
+  D:00EEH         SYMBOL        JOKER
+  D:00EFH         SYMBOL        LBD
+  D:00BEH         SYMBOL        LDVREGCFG
+  B:0098H.4       SYMBOL        LFBBM0
+  B:0098H.5       SYMBOL        LFBBM1
+  D:00B1H         SYMBOL        LFBIAS
+  D:00B2H         SYMBOL        LFCDFLT
+  D:00B5H         SYMBOL        LFCDM0
+  D:00B3H         SYMBOL        LFCDM1
+  B:00C0H.5       SYMBOL        LFCD_FLAG
+  D:00B4H         SYMBOL        LFDIV
+  D:00A7H         SYMBOL        LFFDH
+  D:00A6H         SYMBOL        LFFDL
+  B:0098H.0       SYMBOL        LFONIND
+  D:00C6H         SYMBOL        LFOOT
+  D:00C5H         SYMBOL        LFOOTP
+  D:00CDH         SYMBOL        LFP0H
+  D:00CCH         SYMBOL        LFP0L
+  D:00CFH         SYMBOL        LFP1H
+  D:00CEH         SYMBOL        LFP1L
+  D:00C7H         SYMBOL        LFPCFG
+  B:00C0H.2       SYMBOL        LFPM0_FLAG
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 14
+
+
+  B:00C0H.3       SYMBOL        LFPM1_FLAG
+  D:00B7H         SYMBOL        LFRX0
+  D:00B6H         SYMBOL        LFRX1
+  D:00AFH         SYMBOL        LFRX2
+  D:0098H         SYMBOL        LFRXC
+  D:00A5H         SYMBOL        LFRXD
+  D:00A4H         SYMBOL        LFRXS
+  D:00A2H         SYMBOL        LFSOURCE
+  B:00C0H.4       SYMBOL        LFSY_FLAG
+  D:00BFH         SYMBOL        LPVREGTR
+  D:0084H         SYMBOL        MMR0
+  D:0085H         SYMBOL        MMR1
+  D:0086H         SYMBOL        MMR2
+  D:00D6H         SYMBOL        OSCCONF
+  D:00E6H         SYMBOL        OSCCONF2
+  D:00F4H         SYMBOL        OSCCONF3
+  D:0091H         SYMBOL        P1DIR
+  D:0092H         SYMBOL        P1IN
+  D:0090H         SYMBOL        P1OUT
+  D:0093H         SYMBOL        P1SENS
+  B:00D8H.3       SYMBOL        PDADC
+  B:00D8H.4       SYMBOL        PDLMB
+  B:00E8H.7       SYMBOL        PDWEN
+  B:00F8H.7       SYMBOL        PDWN
+  B:0090H.0       SYMBOL        PPO0
+  B:0090H.1       SYMBOL        PPO1
+  B:0090H.2       SYMBOL        PPO2
+  D:00D1H         SYMBOL        REF
+  B:00D8H.0       SYMBOL        RESET
+  D:00C8H         SYMBOL        RFC
+  D:00C9H         SYMBOL        RFD
+  D:00CAH         SYMBOL        RFENC
+  D:00DFH         SYMBOL        RFFSLD
+  D:00D7H         SYMBOL        RFFSPLL
+  D:00CBH         SYMBOL        RFS
+  D:00AEH         SYMBOL        RFTX
+  B:00E8H.4       SYMBOL        RFTXPEN
+  D:00DEH         SYMBOL        RFVCO
+  D:00ABH         SYMBOL        RNGD
+  B:00E8H.5       SYMBOL        RNGEN
+  B:00F8H.2       SYMBOL        STM
+  B:0098H.1       SYMBOL        SYNCIND
+  B:0088H.1       SYMBOL        T0FULL
+  B:0088H.0       SYMBOL        T0RUN
+  B:0088H.5       SYMBOL        T1FULL
+  B:0088H.4       SYMBOL        T1RUN
+  D:00BDH         SYMBOL        TMAX
+  B:00C0H.6       SYMBOL        TMAX_FLAG
+  B:00F8H.6       SYMBOL        TSHDWN
+  B:00C0H.7       SYMBOL        WDOG_FLAG
+  B:00D8H.1       SYMBOL        WDRES
+  D:00C0H         SYMBOL        WUF
+  D:00C1H         SYMBOL        WUM
+  D:00C4H         SYMBOL        XTAL0
+  D:00C3H         SYMBOL        XTAL1
+  C:485EH         LINE#         36
+  C:4861H         LINE#         38
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 15
+
+
+  C:4862H         LINE#         39
+  C:4864H         LINE#         40
+  C:4865H         LINE#         41
+  C:4868H         LINE#         44
+  C:486AH         LINE#         45
+  C:486DH         LINE#         47
+  C:4870H         LINE#         48
+  C:4872H         LINE#         49
+  -------         ENDMOD        LIB_MEASACCELERATION
+
+  -------         MODULE        LIB_MEASPRESSURE
+  C:4873H         SEGMENT       MEASURE_PRESS
+  C:4873H         PUBLIC        _MEAS_PRESSURE
+  D:00DBH         SYMBOL        ADCC0
+  D:00DCH         SYMBOL        ADCC1
+  D:00D5H         SYMBOL        ADCDH
+  D:00D4H         SYMBOL        ADCDL
+  D:00D2H         SYMBOL        ADCM
+  D:00DAH         SYMBOL        ADCOFF
+  D:00D3H         SYMBOL        ADCS
+  D:00DDH         SYMBOL        ADWBC
+  B:00E8H.3       SYMBOL        ADWBEN
+  D:00EDH         SYMBOL        BRD
+  B:0098H.7       SYMBOL        CDRECAL
+  D:00F8H         SYMBOL        CFG0
+  D:00E8H         SYMBOL        CFG1
+  D:00D8H         SYMBOL        CFG2
+  D:00E7H         SYMBOL        CFGA
+  B:00F8H.0       SYMBOL        CLKSEL
+  D:00ACH         SYMBOL        CRC0
+  D:00ADH         SYMBOL        CRC1
+  D:00A9H         SYMBOL        CRCC
+  D:00AAH         SYMBOL        CRCD
+  D:0095H         SYMBOL        DBCH0
+  D:009DH         SYMBOL        DBCH1
+  D:0094H         SYMBOL        DBCL0
+  D:009CH         SYMBOL        DBCL1
+  D:0097H         SYMBOL        DBTH0
+  D:009FH         SYMBOL        DBTH1
+  D:0096H         SYMBOL        DBTL0
+  D:009EH         SYMBOL        DBTL1
+  B:0098H.6       SYMBOL        DISAGC
+  D:00B9H         SYMBOL        DIVIC
+  D:00D9H         SYMBOL        DSR
+  B:0098H.2       SYMBOL        ENLFRX
+  B:0098H.3       SYMBOL        ENOOTIM
+  B:00C8H.0       SYMBOL        ENPA
+  B:00C8H.1       SYMBOL        ENPLL
+  B:00C8H.7       SYMBOL        ENPLLMON
+  B:00F8H.4       SYMBOL        ENXOSC
+  B:00C0H.1       SYMBOL        EXT_FLAG
+  D:00E1H         SYMBOL        FCPP0
+  D:00E2H         SYMBOL        FCPP1
+  D:00EAH         SYMBOL        FCS
+  D:00E3H         SYMBOL        FCSERM
+  D:00E9H         SYMBOL        FCSP
+  D:00E5H         SYMBOL        FCSS
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 16
+
+
+  D:00E4H         SYMBOL        FCTKAS
+  B:00F8H.3       SYMBOL        FTM
+  D:00B8H         SYMBOL        GPR0
+  D:00B0H         SYMBOL        GPR1
+  D:00A8H         SYMBOL        GPR2
+  D:00F1H         SYMBOL        GPR3
+  D:00F2H         SYMBOL        GPR4
+  D:00F3H         SYMBOL        GPR5
+  D:00F5H         SYMBOL        GPR6
+  D:00F6H         SYMBOL        GPR7
+  D:00F7H         SYMBOL        GPR8
+  D:00F9H         SYMBOL        GPR9
+  D:00FAH         SYMBOL        GPRA
+  D:00FBH         SYMBOL        GPRB
+  D:00FCH         SYMBOL        GPRC
+  D:00FDH         SYMBOL        GPRD
+  D:00FEH         SYMBOL        GPRE
+  D:00FFH         SYMBOL        GPRF
+  D:009AH         SYMBOL        I2CD
+  B:00E8H.6       SYMBOL        I2CEN
+  B:00D8H.6       SYMBOL        I2CGCEN
+  D:009BH         SYMBOL        I2CS
+  B:00F8H.5       SYMBOL        IDLE
+  B:00E8H.0       SYMBOL        ITEN
+  B:00C0H.0       SYMBOL        ITIM_FLAG
+  B:00E8H.1       SYMBOL        ITINIT
+  D:00BBH         SYMBOL        ITPH
+  D:00BAH         SYMBOL        ITPL
+  D:00BCH         SYMBOL        ITPR
+  B:00E8H.2       SYMBOL        ITRD
+  D:00EEH         SYMBOL        JOKER
+  D:00EFH         SYMBOL        LBD
+  D:00BEH         SYMBOL        LDVREGCFG
+  B:0098H.4       SYMBOL        LFBBM0
+  B:0098H.5       SYMBOL        LFBBM1
+  D:00B1H         SYMBOL        LFBIAS
+  D:00B2H         SYMBOL        LFCDFLT
+  D:00B5H         SYMBOL        LFCDM0
+  D:00B3H         SYMBOL        LFCDM1
+  B:00C0H.5       SYMBOL        LFCD_FLAG
+  D:00B4H         SYMBOL        LFDIV
+  D:00A7H         SYMBOL        LFFDH
+  D:00A6H         SYMBOL        LFFDL
+  B:0098H.0       SYMBOL        LFONIND
+  D:00C6H         SYMBOL        LFOOT
+  D:00C5H         SYMBOL        LFOOTP
+  D:00CDH         SYMBOL        LFP0H
+  D:00CCH         SYMBOL        LFP0L
+  D:00CFH         SYMBOL        LFP1H
+  D:00CEH         SYMBOL        LFP1L
+  D:00C7H         SYMBOL        LFPCFG
+  B:00C0H.2       SYMBOL        LFPM0_FLAG
+  B:00C0H.3       SYMBOL        LFPM1_FLAG
+  D:00B7H         SYMBOL        LFRX0
+  D:00B6H         SYMBOL        LFRX1
+  D:00AFH         SYMBOL        LFRX2
+  D:0098H         SYMBOL        LFRXC
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 17
+
+
+  D:00A5H         SYMBOL        LFRXD
+  D:00A4H         SYMBOL        LFRXS
+  D:00A2H         SYMBOL        LFSOURCE
+  B:00C0H.4       SYMBOL        LFSY_FLAG
+  D:00BFH         SYMBOL        LPVREGTR
+  D:0084H         SYMBOL        MMR0
+  D:0085H         SYMBOL        MMR1
+  D:0086H         SYMBOL        MMR2
+  D:00D6H         SYMBOL        OSCCONF
+  D:00E6H         SYMBOL        OSCCONF2
+  D:00F4H         SYMBOL        OSCCONF3
+  D:0091H         SYMBOL        P1DIR
+  D:0092H         SYMBOL        P1IN
+  D:0090H         SYMBOL        P1OUT
+  D:0093H         SYMBOL        P1SENS
+  B:00D8H.3       SYMBOL        PDADC
+  B:00D8H.4       SYMBOL        PDLMB
+  B:00E8H.7       SYMBOL        PDWEN
+  B:00F8H.7       SYMBOL        PDWN
+  B:0090H.0       SYMBOL        PPO0
+  B:0090H.1       SYMBOL        PPO1
+  B:0090H.2       SYMBOL        PPO2
+  D:00D1H         SYMBOL        REF
+  B:00D8H.0       SYMBOL        RESET
+  D:00C8H         SYMBOL        RFC
+  D:00C9H         SYMBOL        RFD
+  D:00CAH         SYMBOL        RFENC
+  D:00DFH         SYMBOL        RFFSLD
+  D:00D7H         SYMBOL        RFFSPLL
+  D:00CBH         SYMBOL        RFS
+  D:00AEH         SYMBOL        RFTX
+  B:00E8H.4       SYMBOL        RFTXPEN
+  D:00DEH         SYMBOL        RFVCO
+  D:00ABH         SYMBOL        RNGD
+  B:00E8H.5       SYMBOL        RNGEN
+  B:00F8H.2       SYMBOL        STM
+  B:0098H.1       SYMBOL        SYNCIND
+  B:0088H.1       SYMBOL        T0FULL
+  B:0088H.0       SYMBOL        T0RUN
+  B:0088H.5       SYMBOL        T1FULL
+  B:0088H.4       SYMBOL        T1RUN
+  D:00BDH         SYMBOL        TMAX
+  B:00C0H.6       SYMBOL        TMAX_FLAG
+  B:00F8H.6       SYMBOL        TSHDWN
+  B:00C0H.7       SYMBOL        WDOG_FLAG
+  B:00D8H.1       SYMBOL        WDRES
+  D:00C0H         SYMBOL        WUF
+  D:00C1H         SYMBOL        WUM
+  D:00C4H         SYMBOL        XTAL0
+  D:00C3H         SYMBOL        XTAL1
+  C:4873H         LINE#         36
+  C:4876H         LINE#         38
+  C:4877H         LINE#         39
+  C:4879H         LINE#         40
+  C:487AH         LINE#         41
+  C:487DH         LINE#         44
+  C:487FH         LINE#         45
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 18
+
+
+  C:4882H         LINE#         47
+  C:4885H         LINE#         48
+  C:4887H         LINE#         49
+  -------         ENDMOD        LIB_MEASPRESSURE
+
+  -------         MODULE        LIB_MEASVOLTAGE
+  C:493FH         SEGMENT       MEASSUPPVOLTAGE
+  C:493FH         PUBLIC        _MEAS_SUPPLY_VOLTAGE
+  C:493FH         LINE#         32
+  -------         ENDMOD        LIB_MEASVOLTAGE
+
+  -------         MODULE        LIB_MEASTEMPERATURE
+  C:4888H         SEGMENT       MEASTEMP
+  C:4888H         PUBLIC        _MEAS_TEMPERATURE
+  D:00DBH         SYMBOL        ADCC0
+  D:00DCH         SYMBOL        ADCC1
+  D:00D5H         SYMBOL        ADCDH
+  D:00D4H         SYMBOL        ADCDL
+  D:00D2H         SYMBOL        ADCM
+  D:00DAH         SYMBOL        ADCOFF
+  D:00D3H         SYMBOL        ADCS
+  D:00DDH         SYMBOL        ADWBC
+  B:00E8H.3       SYMBOL        ADWBEN
+  D:00EDH         SYMBOL        BRD
+  B:0098H.7       SYMBOL        CDRECAL
+  D:00F8H         SYMBOL        CFG0
+  D:00E8H         SYMBOL        CFG1
+  D:00D8H         SYMBOL        CFG2
+  D:00E7H         SYMBOL        CFGA
+  B:00F8H.0       SYMBOL        CLKSEL
+  D:00ACH         SYMBOL        CRC0
+  D:00ADH         SYMBOL        CRC1
+  D:00A9H         SYMBOL        CRCC
+  D:00AAH         SYMBOL        CRCD
+  D:0095H         SYMBOL        DBCH0
+  D:009DH         SYMBOL        DBCH1
+  D:0094H         SYMBOL        DBCL0
+  D:009CH         SYMBOL        DBCL1
+  D:0097H         SYMBOL        DBTH0
+  D:009FH         SYMBOL        DBTH1
+  D:0096H         SYMBOL        DBTL0
+  D:009EH         SYMBOL        DBTL1
+  B:0098H.6       SYMBOL        DISAGC
+  D:00B9H         SYMBOL        DIVIC
+  D:00D9H         SYMBOL        DSR
+  B:0098H.2       SYMBOL        ENLFRX
+  B:0098H.3       SYMBOL        ENOOTIM
+  B:00C8H.0       SYMBOL        ENPA
+  B:00C8H.1       SYMBOL        ENPLL
+  B:00C8H.7       SYMBOL        ENPLLMON
+  B:00F8H.4       SYMBOL        ENXOSC
+  B:00C0H.1       SYMBOL        EXT_FLAG
+  D:00E1H         SYMBOL        FCPP0
+  D:00E2H         SYMBOL        FCPP1
+  D:00EAH         SYMBOL        FCS
+  D:00E3H         SYMBOL        FCSERM
+  D:00E9H         SYMBOL        FCSP
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 19
+
+
+  D:00E5H         SYMBOL        FCSS
+  D:00E4H         SYMBOL        FCTKAS
+  B:00F8H.3       SYMBOL        FTM
+  D:00B8H         SYMBOL        GPR0
+  D:00B0H         SYMBOL        GPR1
+  D:00A8H         SYMBOL        GPR2
+  D:00F1H         SYMBOL        GPR3
+  D:00F2H         SYMBOL        GPR4
+  D:00F3H         SYMBOL        GPR5
+  D:00F5H         SYMBOL        GPR6
+  D:00F6H         SYMBOL        GPR7
+  D:00F7H         SYMBOL        GPR8
+  D:00F9H         SYMBOL        GPR9
+  D:00FAH         SYMBOL        GPRA
+  D:00FBH         SYMBOL        GPRB
+  D:00FCH         SYMBOL        GPRC
+  D:00FDH         SYMBOL        GPRD
+  D:00FEH         SYMBOL        GPRE
+  D:00FFH         SYMBOL        GPRF
+  D:009AH         SYMBOL        I2CD
+  B:00E8H.6       SYMBOL        I2CEN
+  B:00D8H.6       SYMBOL        I2CGCEN
+  D:009BH         SYMBOL        I2CS
+  B:00F8H.5       SYMBOL        IDLE
+  B:00E8H.0       SYMBOL        ITEN
+  B:00C0H.0       SYMBOL        ITIM_FLAG
+  B:00E8H.1       SYMBOL        ITINIT
+  D:00BBH         SYMBOL        ITPH
+  D:00BAH         SYMBOL        ITPL
+  D:00BCH         SYMBOL        ITPR
+  B:00E8H.2       SYMBOL        ITRD
+  D:00EEH         SYMBOL        JOKER
+  D:00EFH         SYMBOL        LBD
+  D:00BEH         SYMBOL        LDVREGCFG
+  B:0098H.4       SYMBOL        LFBBM0
+  B:0098H.5       SYMBOL        LFBBM1
+  D:00B1H         SYMBOL        LFBIAS
+  D:00B2H         SYMBOL        LFCDFLT
+  D:00B5H         SYMBOL        LFCDM0
+  D:00B3H         SYMBOL        LFCDM1
+  B:00C0H.5       SYMBOL        LFCD_FLAG
+  D:00B4H         SYMBOL        LFDIV
+  D:00A7H         SYMBOL        LFFDH
+  D:00A6H         SYMBOL        LFFDL
+  B:0098H.0       SYMBOL        LFONIND
+  D:00C6H         SYMBOL        LFOOT
+  D:00C5H         SYMBOL        LFOOTP
+  D:00CDH         SYMBOL        LFP0H
+  D:00CCH         SYMBOL        LFP0L
+  D:00CFH         SYMBOL        LFP1H
+  D:00CEH         SYMBOL        LFP1L
+  D:00C7H         SYMBOL        LFPCFG
+  B:00C0H.2       SYMBOL        LFPM0_FLAG
+  B:00C0H.3       SYMBOL        LFPM1_FLAG
+  D:00B7H         SYMBOL        LFRX0
+  D:00B6H         SYMBOL        LFRX1
+  D:00AFH         SYMBOL        LFRX2
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 20
+
+
+  D:0098H         SYMBOL        LFRXC
+  D:00A5H         SYMBOL        LFRXD
+  D:00A4H         SYMBOL        LFRXS
+  D:00A2H         SYMBOL        LFSOURCE
+  B:00C0H.4       SYMBOL        LFSY_FLAG
+  D:00BFH         SYMBOL        LPVREGTR
+  D:0084H         SYMBOL        MMR0
+  D:0085H         SYMBOL        MMR1
+  D:0086H         SYMBOL        MMR2
+  D:00D6H         SYMBOL        OSCCONF
+  D:00E6H         SYMBOL        OSCCONF2
+  D:00F4H         SYMBOL        OSCCONF3
+  D:0091H         SYMBOL        P1DIR
+  D:0092H         SYMBOL        P1IN
+  D:0090H         SYMBOL        P1OUT
+  D:0093H         SYMBOL        P1SENS
+  B:00D8H.3       SYMBOL        PDADC
+  B:00D8H.4       SYMBOL        PDLMB
+  B:00E8H.7       SYMBOL        PDWEN
+  B:00F8H.7       SYMBOL        PDWN
+  B:0090H.0       SYMBOL        PPO0
+  B:0090H.1       SYMBOL        PPO1
+  B:0090H.2       SYMBOL        PPO2
+  D:00D1H         SYMBOL        REF
+  B:00D8H.0       SYMBOL        RESET
+  D:00C8H         SYMBOL        RFC
+  D:00C9H         SYMBOL        RFD
+  D:00CAH         SYMBOL        RFENC
+  D:00DFH         SYMBOL        RFFSLD
+  D:00D7H         SYMBOL        RFFSPLL
+  D:00CBH         SYMBOL        RFS
+  D:00AEH         SYMBOL        RFTX
+  B:00E8H.4       SYMBOL        RFTXPEN
+  D:00DEH         SYMBOL        RFVCO
+  D:00ABH         SYMBOL        RNGD
+  B:00E8H.5       SYMBOL        RNGEN
+  B:00F8H.2       SYMBOL        STM
+  B:0098H.1       SYMBOL        SYNCIND
+  B:0088H.1       SYMBOL        T0FULL
+  B:0088H.0       SYMBOL        T0RUN
+  B:0088H.5       SYMBOL        T1FULL
+  B:0088H.4       SYMBOL        T1RUN
+  D:00BDH         SYMBOL        TMAX
+  B:00C0H.6       SYMBOL        TMAX_FLAG
+  B:00F8H.6       SYMBOL        TSHDWN
+  B:00C0H.7       SYMBOL        WDOG_FLAG
+  B:00D8H.1       SYMBOL        WDRES
+  D:00C0H         SYMBOL        WUF
+  D:00C1H         SYMBOL        WUM
+  D:00C4H         SYMBOL        XTAL0
+  D:00C3H         SYMBOL        XTAL1
+  C:4888H         LINE#         34
+  C:488BH         LINE#         36
+  C:488EH         LINE#         39
+  C:4890H         LINE#         40
+  C:4893H         LINE#         42
+  C:4896H         LINE#         43
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 21
+
+
+  C:4898H         LINE#         44
+  -------         ENDMOD        LIB_MEASTEMPERATURE
+
+  -------         MODULE        LIB_POWERDOWN
+  C:4942H         SEGMENT       POWDWN
+  C:4942H         PUBLIC        POWERDOWN
+  C:4942H         LINE#         32
+  -------         ENDMOD        LIB_POWERDOWN
+
+  -------         MODULE        LIB_READID
+  C:4945H         SEGMENT       READSENSORID
+  C:4945H         PUBLIC        _READ_ID
+  C:4945H         LINE#         32
+  -------         ENDMOD        LIB_READID
+
+  -------         MODULE        LIB_SCALE_PRESSURE
+  C:4706H         SEGMENT       SCALE_PRESSURE
+  C:4706H         PUBLIC        _SCALE_PRESSURE
+  C:4729H         SYMBOL        _SCALE_PRESSURE_RANGEOK
+  C:471BH         SYMBOL        _SCALE_PRESSURE_TESTBELOW
+  C:4706H         LINE#         33
+  C:4707H         LINE#         34
+  C:4708H         LINE#         35
+  C:4709H         LINE#         36
+  C:470AH         LINE#         37
+  C:470BH         LINE#         38
+  C:470CH         LINE#         39
+  C:470DH         LINE#         40
+  C:470EH         LINE#         41
+  C:470FH         LINE#         42
+  C:4711H         LINE#         43
+  C:4712H         LINE#         44
+  C:4714H         LINE#         45
+  C:4716H         LINE#         46
+  C:4718H         LINE#         51
+  C:471AH         LINE#         52
+  C:471BH         LINE#         60
+  C:471CH         LINE#         61
+  C:471DH         LINE#         62
+  C:471FH         LINE#         63
+  C:4720H         LINE#         64
+  C:4722H         LINE#         65
+  C:4724H         LINE#         66
+  C:4726H         LINE#         69
+  C:4728H         LINE#         70
+  C:4729H         LINE#         74
+  C:472BH         LINE#         78
+  C:472EH         LINE#         80
+  C:4730H         LINE#         81
+  C:4732H         LINE#         82
+  C:4734H         LINE#         83
+  C:4736H         LINE#         84
+  C:4737H         LINE#         85
+  C:4739H         LINE#         86
+  -------         ENDMOD        LIB_SCALE_PRESSURE
+
+  -------         MODULE        LIB_SEND_RF_TELEGRAM
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 22
+
+
+  C:491AH         SEGMENT       SEND_RF_TELEGRAM
+  C:491AH         PUBLIC        _SEND_RF_TELEGRAM
+  D:00DBH         SYMBOL        ADCC0
+  D:00DCH         SYMBOL        ADCC1
+  D:00D5H         SYMBOL        ADCDH
+  D:00D4H         SYMBOL        ADCDL
+  D:00D2H         SYMBOL        ADCM
+  D:00DAH         SYMBOL        ADCOFF
+  D:00D3H         SYMBOL        ADCS
+  D:00DDH         SYMBOL        ADWBC
+  B:00E8H.3       SYMBOL        ADWBEN
+  D:00EDH         SYMBOL        BRD
+  B:0098H.7       SYMBOL        CDRECAL
+  D:00F8H         SYMBOL        CFG0
+  D:00E8H         SYMBOL        CFG1
+  D:00D8H         SYMBOL        CFG2
+  D:00E7H         SYMBOL        CFGA
+  B:00F8H.0       SYMBOL        CLKSEL
+  D:00ACH         SYMBOL        CRC0
+  D:00ADH         SYMBOL        CRC1
+  D:00A9H         SYMBOL        CRCC
+  D:00AAH         SYMBOL        CRCD
+  D:0095H         SYMBOL        DBCH0
+  D:009DH         SYMBOL        DBCH1
+  D:0094H         SYMBOL        DBCL0
+  D:009CH         SYMBOL        DBCL1
+  D:0097H         SYMBOL        DBTH0
+  D:009FH         SYMBOL        DBTH1
+  D:0096H         SYMBOL        DBTL0
+  D:009EH         SYMBOL        DBTL1
+  B:0098H.6       SYMBOL        DISAGC
+  D:00B9H         SYMBOL        DIVIC
+  D:00D9H         SYMBOL        DSR
+  B:0098H.2       SYMBOL        ENLFRX
+  B:0098H.3       SYMBOL        ENOOTIM
+  B:00C8H.0       SYMBOL        ENPA
+  B:00C8H.1       SYMBOL        ENPLL
+  B:00C8H.7       SYMBOL        ENPLLMON
+  B:00F8H.4       SYMBOL        ENXOSC
+  B:00C0H.1       SYMBOL        EXT_FLAG
+  D:00E1H         SYMBOL        FCPP0
+  D:00E2H         SYMBOL        FCPP1
+  D:00EAH         SYMBOL        FCS
+  D:00E3H         SYMBOL        FCSERM
+  D:00E9H         SYMBOL        FCSP
+  D:00E5H         SYMBOL        FCSS
+  D:00E4H         SYMBOL        FCTKAS
+  B:00F8H.3       SYMBOL        FTM
+  D:00B8H         SYMBOL        GPR0
+  D:00B0H         SYMBOL        GPR1
+  D:00A8H         SYMBOL        GPR2
+  D:00F1H         SYMBOL        GPR3
+  D:00F2H         SYMBOL        GPR4
+  D:00F3H         SYMBOL        GPR5
+  D:00F5H         SYMBOL        GPR6
+  D:00F6H         SYMBOL        GPR7
+  D:00F7H         SYMBOL        GPR8
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 23
+
+
+  D:00F9H         SYMBOL        GPR9
+  D:00FAH         SYMBOL        GPRA
+  D:00FBH         SYMBOL        GPRB
+  D:00FCH         SYMBOL        GPRC
+  D:00FDH         SYMBOL        GPRD
+  D:00FEH         SYMBOL        GPRE
+  D:00FFH         SYMBOL        GPRF
+  D:009AH         SYMBOL        I2CD
+  B:00E8H.6       SYMBOL        I2CEN
+  B:00D8H.6       SYMBOL        I2CGCEN
+  D:009BH         SYMBOL        I2CS
+  B:00F8H.5       SYMBOL        IDLE
+  B:00E8H.0       SYMBOL        ITEN
+  B:00C0H.0       SYMBOL        ITIM_FLAG
+  B:00E8H.1       SYMBOL        ITINIT
+  D:00BBH         SYMBOL        ITPH
+  D:00BAH         SYMBOL        ITPL
+  D:00BCH         SYMBOL        ITPR
+  B:00E8H.2       SYMBOL        ITRD
+  D:00EEH         SYMBOL        JOKER
+  D:00EFH         SYMBOL        LBD
+  D:00BEH         SYMBOL        LDVREGCFG
+  B:0098H.4       SYMBOL        LFBBM0
+  B:0098H.5       SYMBOL        LFBBM1
+  D:00B1H         SYMBOL        LFBIAS
+  D:00B2H         SYMBOL        LFCDFLT
+  D:00B5H         SYMBOL        LFCDM0
+  D:00B3H         SYMBOL        LFCDM1
+  B:00C0H.5       SYMBOL        LFCD_FLAG
+  D:00B4H         SYMBOL        LFDIV
+  D:00A7H         SYMBOL        LFFDH
+  D:00A6H         SYMBOL        LFFDL
+  B:0098H.0       SYMBOL        LFONIND
+  D:00C6H         SYMBOL        LFOOT
+  D:00C5H         SYMBOL        LFOOTP
+  D:00CDH         SYMBOL        LFP0H
+  D:00CCH         SYMBOL        LFP0L
+  D:00CFH         SYMBOL        LFP1H
+  D:00CEH         SYMBOL        LFP1L
+  D:00C7H         SYMBOL        LFPCFG
+  B:00C0H.2       SYMBOL        LFPM0_FLAG
+  B:00C0H.3       SYMBOL        LFPM1_FLAG
+  D:00B7H         SYMBOL        LFRX0
+  D:00B6H         SYMBOL        LFRX1
+  D:00AFH         SYMBOL        LFRX2
+  D:0098H         SYMBOL        LFRXC
+  D:00A5H         SYMBOL        LFRXD
+  D:00A4H         SYMBOL        LFRXS
+  D:00A2H         SYMBOL        LFSOURCE
+  B:00C0H.4       SYMBOL        LFSY_FLAG
+  D:00BFH         SYMBOL        LPVREGTR
+  D:0084H         SYMBOL        MMR0
+  D:0085H         SYMBOL        MMR1
+  D:0086H         SYMBOL        MMR2
+  D:00D6H         SYMBOL        OSCCONF
+  D:00E6H         SYMBOL        OSCCONF2
+  D:00F4H         SYMBOL        OSCCONF3
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 24
+
+
+  D:0091H         SYMBOL        P1DIR
+  D:0092H         SYMBOL        P1IN
+  D:0090H         SYMBOL        P1OUT
+  D:0093H         SYMBOL        P1SENS
+  B:00D8H.3       SYMBOL        PDADC
+  B:00D8H.4       SYMBOL        PDLMB
+  B:00E8H.7       SYMBOL        PDWEN
+  B:00F8H.7       SYMBOL        PDWN
+  B:0090H.0       SYMBOL        PPO0
+  B:0090H.1       SYMBOL        PPO1
+  B:0090H.2       SYMBOL        PPO2
+  D:00D1H         SYMBOL        REF
+  B:00D8H.0       SYMBOL        RESET
+  D:00C8H         SYMBOL        RFC
+  D:00C9H         SYMBOL        RFD
+  D:00CAH         SYMBOL        RFENC
+  D:00DFH         SYMBOL        RFFSLD
+  D:00D7H         SYMBOL        RFFSPLL
+  D:00CBH         SYMBOL        RFS
+  D:00AEH         SYMBOL        RFTX
+  B:00E8H.4       SYMBOL        RFTXPEN
+  D:00DEH         SYMBOL        RFVCO
+  D:00ABH         SYMBOL        RNGD
+  B:00E8H.5       SYMBOL        RNGEN
+  B:00F8H.2       SYMBOL        STM
+  B:0098H.1       SYMBOL        SYNCIND
+  B:0088H.1       SYMBOL        T0FULL
+  B:0088H.0       SYMBOL        T0RUN
+  B:0088H.5       SYMBOL        T1FULL
+  B:0088H.4       SYMBOL        T1RUN
+  D:0088H         SYMBOL        TCON
+  D:00BDH         SYMBOL        TMAX
+  B:00C0H.6       SYMBOL        TMAX_FLAG
+  B:00F8H.6       SYMBOL        TSHDWN
+  B:00C0H.7       SYMBOL        WDOG_FLAG
+  B:00D8H.1       SYMBOL        WDRES
+  D:00C0H         SYMBOL        WUF
+  D:00C1H         SYMBOL        WUM
+  D:00C4H         SYMBOL        XTAL0
+  D:00C3H         SYMBOL        XTAL1
+  C:491AH         LINE#         32
+  C:491DH         LINE#         34
+  C:491FH         LINE#         35
+  -------         ENDMOD        LIB_SEND_RF_TELEGRAM
+
+  -------         MODULE        LIB_STARTXTALOSC
+  C:4907H         SEGMENT       START_XTAL_OSC
+  C:4907H         PUBLIC        _STARTXTALOSC
+  D:00DBH         SYMBOL        ADCC0
+  D:00DCH         SYMBOL        ADCC1
+  D:00D5H         SYMBOL        ADCDH
+  D:00D4H         SYMBOL        ADCDL
+  D:00D2H         SYMBOL        ADCM
+  D:00DAH         SYMBOL        ADCOFF
+  D:00D3H         SYMBOL        ADCS
+  D:00DDH         SYMBOL        ADWBC
+  B:00E8H.3       SYMBOL        ADWBEN
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 25
+
+
+  D:00EDH         SYMBOL        BRD
+  B:0098H.7       SYMBOL        CDRECAL
+  D:00F8H         SYMBOL        CFG0
+  D:00E8H         SYMBOL        CFG1
+  D:00D8H         SYMBOL        CFG2
+  D:00E7H         SYMBOL        CFGA
+  B:00F8H.0       SYMBOL        CLKSEL
+  D:00ACH         SYMBOL        CRC0
+  D:00ADH         SYMBOL        CRC1
+  D:00A9H         SYMBOL        CRCC
+  D:00AAH         SYMBOL        CRCD
+  D:0095H         SYMBOL        DBCH0
+  D:009DH         SYMBOL        DBCH1
+  D:0094H         SYMBOL        DBCL0
+  D:009CH         SYMBOL        DBCL1
+  D:0097H         SYMBOL        DBTH0
+  D:009FH         SYMBOL        DBTH1
+  D:0096H         SYMBOL        DBTL0
+  D:009EH         SYMBOL        DBTL1
+  B:0098H.6       SYMBOL        DISAGC
+  D:00B9H         SYMBOL        DIVIC
+  D:00D9H         SYMBOL        DSR
+  B:0098H.2       SYMBOL        ENLFRX
+  B:0098H.3       SYMBOL        ENOOTIM
+  B:00C8H.0       SYMBOL        ENPA
+  B:00C8H.1       SYMBOL        ENPLL
+  B:00C8H.7       SYMBOL        ENPLLMON
+  B:00F8H.4       SYMBOL        ENXOSC
+  B:00C0H.1       SYMBOL        EXT_FLAG
+  D:00E1H         SYMBOL        FCPP0
+  D:00E2H         SYMBOL        FCPP1
+  D:00EAH         SYMBOL        FCS
+  D:00E3H         SYMBOL        FCSERM
+  D:00E9H         SYMBOL        FCSP
+  D:00E5H         SYMBOL        FCSS
+  D:00E4H         SYMBOL        FCTKAS
+  B:00F8H.3       SYMBOL        FTM
+  D:00B8H         SYMBOL        GPR0
+  D:00B0H         SYMBOL        GPR1
+  D:00A8H         SYMBOL        GPR2
+  D:00F1H         SYMBOL        GPR3
+  D:00F2H         SYMBOL        GPR4
+  D:00F3H         SYMBOL        GPR5
+  D:00F5H         SYMBOL        GPR6
+  D:00F6H         SYMBOL        GPR7
+  D:00F7H         SYMBOL        GPR8
+  D:00F9H         SYMBOL        GPR9
+  D:00FAH         SYMBOL        GPRA
+  D:00FBH         SYMBOL        GPRB
+  D:00FCH         SYMBOL        GPRC
+  D:00FDH         SYMBOL        GPRD
+  D:00FEH         SYMBOL        GPRE
+  D:00FFH         SYMBOL        GPRF
+  D:009AH         SYMBOL        I2CD
+  B:00E8H.6       SYMBOL        I2CEN
+  B:00D8H.6       SYMBOL        I2CGCEN
+  D:009BH         SYMBOL        I2CS
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 26
+
+
+  B:00F8H.5       SYMBOL        IDLE
+  B:00E8H.0       SYMBOL        ITEN
+  B:00C0H.0       SYMBOL        ITIM_FLAG
+  B:00E8H.1       SYMBOL        ITINIT
+  D:00BBH         SYMBOL        ITPH
+  D:00BAH         SYMBOL        ITPL
+  D:00BCH         SYMBOL        ITPR
+  B:00E8H.2       SYMBOL        ITRD
+  D:00EEH         SYMBOL        JOKER
+  D:00EFH         SYMBOL        LBD
+  D:00BEH         SYMBOL        LDVREGCFG
+  B:0098H.4       SYMBOL        LFBBM0
+  B:0098H.5       SYMBOL        LFBBM1
+  D:00B1H         SYMBOL        LFBIAS
+  D:00B2H         SYMBOL        LFCDFLT
+  D:00B5H         SYMBOL        LFCDM0
+  D:00B3H         SYMBOL        LFCDM1
+  B:00C0H.5       SYMBOL        LFCD_FLAG
+  D:00B4H         SYMBOL        LFDIV
+  D:00A7H         SYMBOL        LFFDH
+  D:00A6H         SYMBOL        LFFDL
+  B:0098H.0       SYMBOL        LFONIND
+  D:00C6H         SYMBOL        LFOOT
+  D:00C5H         SYMBOL        LFOOTP
+  D:00CDH         SYMBOL        LFP0H
+  D:00CCH         SYMBOL        LFP0L
+  D:00CFH         SYMBOL        LFP1H
+  D:00CEH         SYMBOL        LFP1L
+  D:00C7H         SYMBOL        LFPCFG
+  B:00C0H.2       SYMBOL        LFPM0_FLAG
+  B:00C0H.3       SYMBOL        LFPM1_FLAG
+  D:00B7H         SYMBOL        LFRX0
+  D:00B6H         SYMBOL        LFRX1
+  D:00AFH         SYMBOL        LFRX2
+  D:0098H         SYMBOL        LFRXC
+  D:00A5H         SYMBOL        LFRXD
+  D:00A4H         SYMBOL        LFRXS
+  D:00A2H         SYMBOL        LFSOURCE
+  B:00C0H.4       SYMBOL        LFSY_FLAG
+  D:00BFH         SYMBOL        LPVREGTR
+  D:0084H         SYMBOL        MMR0
+  D:0085H         SYMBOL        MMR1
+  D:0086H         SYMBOL        MMR2
+  D:00D6H         SYMBOL        OSCCONF
+  D:00E6H         SYMBOL        OSCCONF2
+  D:00F4H         SYMBOL        OSCCONF3
+  D:0091H         SYMBOL        P1DIR
+  D:0092H         SYMBOL        P1IN
+  D:0090H         SYMBOL        P1OUT
+  D:0093H         SYMBOL        P1SENS
+  B:00D8H.3       SYMBOL        PDADC
+  B:00D8H.4       SYMBOL        PDLMB
+  B:00E8H.7       SYMBOL        PDWEN
+  B:00F8H.7       SYMBOL        PDWN
+  B:0090H.0       SYMBOL        PPO0
+  B:0090H.1       SYMBOL        PPO1
+  B:0090H.2       SYMBOL        PPO2
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 27
+
+
+  D:00D1H         SYMBOL        REF
+  B:00D8H.0       SYMBOL        RESET
+  D:00C8H         SYMBOL        RFC
+  D:00C9H         SYMBOL        RFD
+  D:00CAH         SYMBOL        RFENC
+  D:00DFH         SYMBOL        RFFSLD
+  D:00D7H         SYMBOL        RFFSPLL
+  D:00CBH         SYMBOL        RFS
+  D:00AEH         SYMBOL        RFTX
+  B:00E8H.4       SYMBOL        RFTXPEN
+  D:00DEH         SYMBOL        RFVCO
+  D:00ABH         SYMBOL        RNGD
+  B:00E8H.5       SYMBOL        RNGEN
+  B:00F8H.2       SYMBOL        STM
+  B:0098H.1       SYMBOL        SYNCIND
+  B:0088H.1       SYMBOL        T0FULL
+  B:0088H.0       SYMBOL        T0RUN
+  B:0088H.5       SYMBOL        T1FULL
+  B:0088H.4       SYMBOL        T1RUN
+  D:00BDH         SYMBOL        TMAX
+  B:00C0H.6       SYMBOL        TMAX_FLAG
+  B:00F8H.6       SYMBOL        TSHDWN
+  B:00C0H.7       SYMBOL        WDOG_FLAG
+  B:00D8H.1       SYMBOL        WDRES
+  D:00C0H         SYMBOL        WUF
+  D:00C1H         SYMBOL        WUM
+  D:00C4H         SYMBOL        XTAL0
+  D:00C3H         SYMBOL        XTAL1
+  C:4907H         LINE#         35
+  C:4909H         LINE#         36
+  C:490BH         LINE#         37
+  C:490CH         LINE#         39
+  C:490EH         LINE#         40
+  -------         ENDMOD        LIB_STARTXTALOSC
+
+  -------         MODULE        LIB_STOPXTALOSC
+  C:4934H         SEGMENT       STOP_XTAL_OSC
+  C:4934H         PUBLIC        STOPXTALOSC
+  C:4934H         LINE#         32
+  C:4936H         LINE#         33
+  -------         ENDMOD        LIB_STOPXTALOSC
+
+  -------         MODULE        LIB_VCOTUNING
+  C:4911H         SEGMENT       SELECTVCOCURVE
+  C:4911H         PUBLIC        VCO_TUNING
+  D:00DBH         SYMBOL        ADCC0
+  D:00DCH         SYMBOL        ADCC1
+  D:00D5H         SYMBOL        ADCDH
+  D:00D4H         SYMBOL        ADCDL
+  D:00D2H         SYMBOL        ADCM
+  D:00DAH         SYMBOL        ADCOFF
+  D:00D3H         SYMBOL        ADCS
+  D:00DDH         SYMBOL        ADWBC
+  B:00E8H.3       SYMBOL        ADWBEN
+  D:00EDH         SYMBOL        BRD
+  B:0098H.7       SYMBOL        CDRECAL
+  D:00F8H         SYMBOL        CFG0
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 28
+
+
+  D:00E8H         SYMBOL        CFG1
+  D:00D8H         SYMBOL        CFG2
+  D:00E7H         SYMBOL        CFGA
+  B:00F8H.0       SYMBOL        CLKSEL
+  D:00ACH         SYMBOL        CRC0
+  D:00ADH         SYMBOL        CRC1
+  D:00A9H         SYMBOL        CRCC
+  D:00AAH         SYMBOL        CRCD
+  D:0095H         SYMBOL        DBCH0
+  D:009DH         SYMBOL        DBCH1
+  D:0094H         SYMBOL        DBCL0
+  D:009CH         SYMBOL        DBCL1
+  D:0097H         SYMBOL        DBTH0
+  D:009FH         SYMBOL        DBTH1
+  D:0096H         SYMBOL        DBTL0
+  D:009EH         SYMBOL        DBTL1
+  B:0098H.6       SYMBOL        DISAGC
+  D:00B9H         SYMBOL        DIVIC
+  D:00D9H         SYMBOL        DSR
+  B:0098H.2       SYMBOL        ENLFRX
+  B:0098H.3       SYMBOL        ENOOTIM
+  B:00C8H.0       SYMBOL        ENPA
+  B:00C8H.1       SYMBOL        ENPLL
+  B:00C8H.7       SYMBOL        ENPLLMON
+  B:00F8H.4       SYMBOL        ENXOSC
+  B:00C0H.1       SYMBOL        EXT_FLAG
+  D:00E1H         SYMBOL        FCPP0
+  D:00E2H         SYMBOL        FCPP1
+  D:00EAH         SYMBOL        FCS
+  D:00E3H         SYMBOL        FCSERM
+  D:00E9H         SYMBOL        FCSP
+  D:00E5H         SYMBOL        FCSS
+  D:00E4H         SYMBOL        FCTKAS
+  B:00F8H.3       SYMBOL        FTM
+  D:00B8H         SYMBOL        GPR0
+  D:00B0H         SYMBOL        GPR1
+  D:00A8H         SYMBOL        GPR2
+  D:00F1H         SYMBOL        GPR3
+  D:00F2H         SYMBOL        GPR4
+  D:00F3H         SYMBOL        GPR5
+  D:00F5H         SYMBOL        GPR6
+  D:00F6H         SYMBOL        GPR7
+  D:00F7H         SYMBOL        GPR8
+  D:00F9H         SYMBOL        GPR9
+  D:00FAH         SYMBOL        GPRA
+  D:00FBH         SYMBOL        GPRB
+  D:00FCH         SYMBOL        GPRC
+  D:00FDH         SYMBOL        GPRD
+  D:00FEH         SYMBOL        GPRE
+  D:00FFH         SYMBOL        GPRF
+  D:009AH         SYMBOL        I2CD
+  B:00E8H.6       SYMBOL        I2CEN
+  B:00D8H.6       SYMBOL        I2CGCEN
+  D:009BH         SYMBOL        I2CS
+  B:00F8H.5       SYMBOL        IDLE
+  B:00E8H.0       SYMBOL        ITEN
+  B:00C0H.0       SYMBOL        ITIM_FLAG
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 29
+
+
+  B:00E8H.1       SYMBOL        ITINIT
+  D:00BBH         SYMBOL        ITPH
+  D:00BAH         SYMBOL        ITPL
+  D:00BCH         SYMBOL        ITPR
+  B:00E8H.2       SYMBOL        ITRD
+  D:00EEH         SYMBOL        JOKER
+  D:00EFH         SYMBOL        LBD
+  D:00BEH         SYMBOL        LDVREGCFG
+  B:0098H.4       SYMBOL        LFBBM0
+  B:0098H.5       SYMBOL        LFBBM1
+  D:00B1H         SYMBOL        LFBIAS
+  D:00B2H         SYMBOL        LFCDFLT
+  D:00B5H         SYMBOL        LFCDM0
+  D:00B3H         SYMBOL        LFCDM1
+  B:00C0H.5       SYMBOL        LFCD_FLAG
+  D:00B4H         SYMBOL        LFDIV
+  D:00A7H         SYMBOL        LFFDH
+  D:00A6H         SYMBOL        LFFDL
+  B:0098H.0       SYMBOL        LFONIND
+  D:00C6H         SYMBOL        LFOOT
+  D:00C5H         SYMBOL        LFOOTP
+  D:00CDH         SYMBOL        LFP0H
+  D:00CCH         SYMBOL        LFP0L
+  D:00CFH         SYMBOL        LFP1H
+  D:00CEH         SYMBOL        LFP1L
+  D:00C7H         SYMBOL        LFPCFG
+  B:00C0H.2       SYMBOL        LFPM0_FLAG
+  B:00C0H.3       SYMBOL        LFPM1_FLAG
+  D:00B7H         SYMBOL        LFRX0
+  D:00B6H         SYMBOL        LFRX1
+  D:00AFH         SYMBOL        LFRX2
+  D:0098H         SYMBOL        LFRXC
+  D:00A5H         SYMBOL        LFRXD
+  D:00A4H         SYMBOL        LFRXS
+  D:00A2H         SYMBOL        LFSOURCE
+  B:00C0H.4       SYMBOL        LFSY_FLAG
+  D:00BFH         SYMBOL        LPVREGTR
+  D:0084H         SYMBOL        MMR0
+  D:0085H         SYMBOL        MMR1
+  D:0086H         SYMBOL        MMR2
+  D:00D6H         SYMBOL        OSCCONF
+  D:00E6H         SYMBOL        OSCCONF2
+  D:00F4H         SYMBOL        OSCCONF3
+  D:0091H         SYMBOL        P1DIR
+  D:0092H         SYMBOL        P1IN
+  D:0090H         SYMBOL        P1OUT
+  D:0093H         SYMBOL        P1SENS
+  B:00D8H.3       SYMBOL        PDADC
+  B:00D8H.4       SYMBOL        PDLMB
+  B:00E8H.7       SYMBOL        PDWEN
+  B:00F8H.7       SYMBOL        PDWN
+  B:0090H.0       SYMBOL        PPO0
+  B:0090H.1       SYMBOL        PPO1
+  B:0090H.2       SYMBOL        PPO2
+  C:4917H         SYMBOL        RC_SELECTED
+  D:00D1H         SYMBOL        REF
+  B:00D8H.0       SYMBOL        RESET
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 30
+
+
+  D:00C8H         SYMBOL        RFC
+  D:00C9H         SYMBOL        RFD
+  D:00CAH         SYMBOL        RFENC
+  D:00DFH         SYMBOL        RFFSLD
+  D:00D7H         SYMBOL        RFFSPLL
+  D:00CBH         SYMBOL        RFS
+  D:00AEH         SYMBOL        RFTX
+  B:00E8H.4       SYMBOL        RFTXPEN
+  D:00DEH         SYMBOL        RFVCO
+  D:00ABH         SYMBOL        RNGD
+  B:00E8H.5       SYMBOL        RNGEN
+  B:00F8H.2       SYMBOL        STM
+  B:0098H.1       SYMBOL        SYNCIND
+  B:0088H.1       SYMBOL        T0FULL
+  B:0088H.0       SYMBOL        T0RUN
+  B:0088H.5       SYMBOL        T1FULL
+  B:0088H.4       SYMBOL        T1RUN
+  D:00BDH         SYMBOL        TMAX
+  B:00C0H.6       SYMBOL        TMAX_FLAG
+  B:00F8H.6       SYMBOL        TSHDWN
+  B:00C0H.7       SYMBOL        WDOG_FLAG
+  B:00D8H.1       SYMBOL        WDRES
+  D:00C0H         SYMBOL        WUF
+  D:00C1H         SYMBOL        WUM
+  D:00C4H         SYMBOL        XTAL0
+  D:00C3H         SYMBOL        XTAL1
+  C:4911H         LINE#         35
+  C:4914H         LINE#         36
+  C:4917H         LINE#         38
+  C:4919H         LINE#         39
+  -------         ENDMOD        LIB_VCOTUNING
+
+  -------         MODULE        LIB_UDIVINTINT
+  C:4948H         SEGMENT       UINTDIV
+  C:4948H         PUBLIC        _UDIVINTINT
+  C:4948H         LINE#         32
+  -------         ENDMOD        LIB_UDIVINTINT
+
+  -------         MODULE        ?C?COPY
+  C:4432H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+  -------         MODULE        ?C?ISTPTR
+  C:4458H         PUBLIC        ?C?ISTPTR
+  -------         ENDMOD        ?C?ISTPTR
+
+  -------         MODULE        ?C?ULSHR
+  C:4477H         PUBLIC        ?C?ULSHR
+  -------         ENDMOD        ?C?ULSHR
+
+  -------         MODULE        PRINTF
+  D:000AH         PUBLIC        ?_PRINTF517?BYTE
+  D:000AH         PUBLIC        ?_PRINTF?BYTE
+  D:000AH         PUBLIC        ?_SPRINTF517?BYTE
+  D:000AH         PUBLIC        ?_SPRINTF?BYTE
+  C:4068H         PUBLIC        _PRINTF
+  C:4068H         PUBLIC        _PRINTF517
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/01/2018  16:30:48  PAGE 31
+
+
+  C:4062H         PUBLIC        _SPRINTF
+  C:4062H         PUBLIC        _SPRINTF517
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        ?C?CLDPTR
+  C:448AH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:44A3H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:44D0H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:44E2H         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?CCASE
+  C:44F2H         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LF_CONFIGURE_CARRIER_DETECT?LF
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?LF_DATARECEIVE?LF
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SCALE_PRESSURE_FOR_RF?RF
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CRC8_CALCULATE?SP37
+
+Program Size: data=138.1 xdata=0 code=2382
+LINK/LOCATE RUN COMPLETE.  4 WARNING(S),  0 ERROR(S)

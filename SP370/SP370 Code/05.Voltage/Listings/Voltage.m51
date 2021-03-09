@@ -1,0 +1,477 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        06/15/2016  08:10:42  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj, .\Objects\STARTUP.obj, .\Objects\uart.obj, .\include\SP37_ROMLibrary.LIB
+>>  TO .\Objects\Voltage PRINT (.\Listings\Voltage.m51) RAMSIZE (256) CODE (0X4000-0X57FF)
+
+
+MEMORY MODEL: SMALL WITH FLOATING POINT ARITHMETIC
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  .\Objects\STARTUP.obj (SEG_C_STARTUP)
+  .\Objects\uart.obj (UART)
+  .\include\SP37_ROMLibrary.LIB (LIB_GETSUPPLYVOLTAGE)
+  .\include\SP37_ROMLibrary.LIB (LIB_STARTSUPPLYVOLTAGE)
+  .\include\SP37_ROMLibrary.LIB (LIB_TRIGSUPPLYVOLTAGE)
+  .\include\SP37_ROMLibrary.LIB (LIB_WAIT100USMULTIPLES)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPDIV)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FCAST)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (PRINTF)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPGETOPN)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPROUND)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPCONVERT)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPADD)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FPMUL)
+  C:\KEIL_V5\C51\LIB\C51FPS.LIB (?C?FTNPWR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LNEG)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CCASE)
+
+
+LINK MAP OF MODULE:  .\Objects\Voltage (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0005H     UNIT         ?ID?MAIN
+            IDATA   000DH     0004H     UNIT         _IDATA_GROUP_
+                    0011H     000FH                  *** GAP ***
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+                    0021H.1   0000H.7                *** GAP ***
+            DATA    0022H     001CH     UNIT         _DATA_GROUP_
+                    003EH     0062H                  *** GAP ***
+            IDATA   00A0H     0020H     ABSOLUTE     
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+                    0000H     4000H                  *** GAP ***
+            CODE    4000H     0006H     ABSOLUTE     
+            CODE    4006H     0564H     UNIT         ?C?LIB_CODE
+            CODE    456AH     046FH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    49D9H     0074H     UNIT         ?PR?MAIN?MAIN
+            CODE    4A4DH     0061H     UNIT         ?CO?MAIN
+            CODE    4AAEH     0052H     UNIT         ?PR?_PUTCHAR?UART
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/15/2016  08:10:42  PAGE 2
+
+
+            CODE    4B00H     000EH     UNIT         ?PR?UART_INIT?UART
+            CODE    4B0EH     000BH     UNIT         ?PR?_PP2?UART
+            CODE    4B19H     0005H     UNIT         WAIT100USMULTIPLES
+            CODE    4B1EH     0004H     UNIT         TRIGGERVOLTAGE
+            CODE    4B22H     0003H     UNIT         GETSUPPVOLTAGE
+            CODE    4B25H     0003H     UNIT         STARTVOLT
+                    4B28H     0CD2H                  *** GAP ***
+            CODE    57FAH     0003H     ABSOLUTE     
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Voltage (MAIN)
+
+
+SEGMENT                           BIT_GROUP          DATA_GROUP          IDATA_GROUP
+  +--> CALLED SEGMENT          START    LENGTH     START    LENGTH     START    LENGTH
+--------------------------------------------------------------------------------------
+?PR?MAIN?MAIN                  -----    -----      -----    -----      000DH    0004H
+  +--> ?PR?UART_INIT?UART
+  +--> ?CO?MAIN
+  +--> ?PR?PRINTF?PRINTF
+
+?PR?UART_INIT?UART             -----    -----      -----    -----      -----    -----
+  +--> ?PR?_PP2?UART
+
+?PR?PRINTF?PRINTF              0020H.0  0001H.1    0022H    001CH      -----    -----
+  +--> ?PR?_PUTCHAR?UART
+
+?PR?_PUTCHAR?UART              -----    -----      -----    -----      -----    -----
+  +--> ?PR?_PP2?UART
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Voltage (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  B:00D8H.1       PUBLIC        WDRES
+  C:49D9H         PUBLIC        MAIN
+  I:0008H         PUBLIC        ID_Result
+  -------         PROC          MAIN
+  -------         DO            
+  D:0007H         SYMBOL        StatusByte
+  I:000DH         SYMBOL        Volt_Result
+  -------         ENDDO         
+  C:49D9H         LINE#         9
+  C:49D9H         LINE#         10
+  C:49D9H         LINE#         18
+  C:49DCH         LINE#         21
+  C:49DCH         LINE#         23
+  C:49DEH         LINE#         25
+  C:49E1H         LINE#         27
+  C:49E4H         LINE#         29
+  C:49E9H         LINE#         31
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/15/2016  08:10:42  PAGE 3
+
+
+  C:49EEH         LINE#         32
+  C:49EEH         LINE#         33
+  C:49F5H         LINE#         34
+  C:4A0FH         LINE#         35
+  C:4A3BH         LINE#         36
+  C:4A3DH         LINE#         38
+  C:4A3DH         LINE#         39
+  C:4A44H         LINE#         40
+  C:4A44H         LINE#         44
+  C:4A4BH         LINE#         45
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        SEG_C_STARTUP
+  C:4000H         PUBLIC        ?C_STARTUP
+  I:00A0H         SYMBOL        ?STACK
+  N:0000H         SYMBOL        SEG_C_STARTUP
+  D:0081H         SYMBOL        SP
+  C:4000H         LINE#         83
+  C:4003H         LINE#         84
+  -------         ENDMOD        SEG_C_STARTUP
+
+  -------         MODULE        UART
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:4B00H         PUBLIC        Uart_Init
+  B:00F8H.5       PUBLIC        IDLE
+  D:0089H         PUBLIC        TMOD
+  B:0088H.1       PUBLIC        T0FULL
+  D:0093H         PUBLIC        P1SENS
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  C:4B0EH         SYMBOL        _PP2
+  D:0091H         PUBLIC        P1DIR
+  D:0090H         PUBLIC        P1OUT
+  B:0088H.0       PUBLIC        T0RUN
+  C:4AAEH         PUBLIC        _putchar
+  -------         PROC          UART_INIT
+  C:4B00H         LINE#         17
+  C:4B00H         LINE#         18
+  C:4B00H         LINE#         21
+  C:4B03H         LINE#         22
+  C:4B06H         LINE#         23
+  C:4B09H         LINE#         25
+  -------         ENDPROC       UART_INIT
+  -------         PROC          _PP2
+  D:0007H         SYMBOL        HIGH_Or_LOW
+  C:4B0EH         LINE#         28
+  C:4B0EH         LINE#         29
+  C:4B0EH         LINE#         30
+  C:4B11H         LINE#         31
+  C:4B15H         LINE#         33
+  C:4B18H         LINE#         34
+  -------         ENDPROC       _PP2
+  -------         PROC          _PUTCHAR
+  D:0006H         SYMBOL        char_to_send
+  -------         DO            
+  D:0002H         SYMBOL        i
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/15/2016  08:10:42  PAGE 4
+
+
+  D:0005H         SYMBOL        TMOD_old
+  D:0003H         SYMBOL        TL0_old
+  D:0004H         SYMBOL        TH0_old
+  -------         ENDDO         
+  C:4AAEH         LINE#         36
+  C:4AB0H         LINE#         37
+  C:4AB0H         LINE#         42
+  C:4AB2H         LINE#         43
+  C:4AB4H         LINE#         44
+  C:4AB6H         LINE#         46
+  C:4AB9H         LINE#         49
+  C:4ABCH         LINE#         50
+  C:4ABFH         LINE#         53
+  C:4AC4H         LINE#         54
+  C:4AC6H         LINE#         55
+  C:4AC8H         LINE#         56
+  C:4ACAH         LINE#         59
+  C:4ACEH         LINE#         60
+  C:4AD0H         LINE#         61
+  C:4AD2H         LINE#         64
+  C:4AD4H         LINE#         65
+  C:4AD4H         LINE#         66
+  C:4AD8H         LINE#         67
+  C:4ADCH         LINE#         69
+  C:4AE1H         LINE#         70
+  C:4AE5H         LINE#         71
+  C:4AE7H         LINE#         72
+  C:4AE9H         LINE#         73
+  C:4AEDH         LINE#         76
+  C:4AF2H         LINE#         77
+  C:4AF4H         LINE#         78
+  C:4AF6H         LINE#         81
+  C:4AF8H         LINE#         82
+  C:4AFAH         LINE#         83
+  C:4AFCH         LINE#         84
+  C:4AFEH         LINE#         86
+  C:4AFFH         LINE#         87
+  -------         ENDPROC       _PUTCHAR
+  -------         ENDMOD        UART
+
+  -------         MODULE        LIB_GETSUPPLYVOLTAGE
+  C:4B22H         SEGMENT       GETSUPPVOLTAGE
+  C:4B22H         PUBLIC        _GET_SUPPLY_VOLTAGE
+  C:4B22H         LINE#         32
+  -------         ENDMOD        LIB_GETSUPPLYVOLTAGE
+
+  -------         MODULE        LIB_STARTSUPPLYVOLTAGE
+  C:4B25H         SEGMENT       STARTVOLT
+  C:4B25H         PUBLIC        START_SUPPLY_VOLTAGE
+  C:4B25H         LINE#         33
+  -------         ENDMOD        LIB_STARTSUPPLYVOLTAGE
+
+  -------         MODULE        LIB_TRIGSUPPLYVOLTAGE
+  C:4B1EH         SEGMENT       TRIGGERVOLTAGE
+  C:4B1EH         PUBLIC        TRIG_SUPPLY_VOLTAGE
+  D:00DBH         SYMBOL        ADCC0
+  D:00DCH         SYMBOL        ADCC1
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/15/2016  08:10:42  PAGE 5
+
+
+  D:00D5H         SYMBOL        ADCDH
+  D:00D4H         SYMBOL        ADCDL
+  D:00D2H         SYMBOL        ADCM
+  D:00DAH         SYMBOL        ADCOFF
+  D:00D3H         SYMBOL        ADCS
+  D:00DDH         SYMBOL        ADWBC
+  B:00E8H.3       SYMBOL        ADWBEN
+  D:00EDH         SYMBOL        BRD
+  B:0098H.7       SYMBOL        CDRECAL
+  D:00F8H         SYMBOL        CFG0
+  D:00E8H         SYMBOL        CFG1
+  D:00D8H         SYMBOL        CFG2
+  D:00E7H         SYMBOL        CFGA
+  B:00F8H.0       SYMBOL        CLKSEL
+  D:00ACH         SYMBOL        CRC0
+  D:00ADH         SYMBOL        CRC1
+  D:00A9H         SYMBOL        CRCC
+  D:00AAH         SYMBOL        CRCD
+  D:0095H         SYMBOL        DBCH0
+  D:009DH         SYMBOL        DBCH1
+  D:0094H         SYMBOL        DBCL0
+  D:009CH         SYMBOL        DBCL1
+  D:0097H         SYMBOL        DBTH0
+  D:009FH         SYMBOL        DBTH1
+  D:0096H         SYMBOL        DBTL0
+  D:009EH         SYMBOL        DBTL1
+  B:0098H.6       SYMBOL        DISAGC
+  D:00B9H         SYMBOL        DIVIC
+  D:00D9H         SYMBOL        DSR
+  B:0098H.2       SYMBOL        ENLFRX
+  B:0098H.3       SYMBOL        ENOOTIM
+  B:00C8H.0       SYMBOL        ENPA
+  B:00C8H.1       SYMBOL        ENPLL
+  B:00C8H.7       SYMBOL        ENPLLMON
+  B:00F8H.4       SYMBOL        ENXOSC
+  B:00C0H.1       SYMBOL        EXT_FLAG
+  D:00E1H         SYMBOL        FCPP0
+  D:00E2H         SYMBOL        FCPP1
+  D:00EAH         SYMBOL        FCS
+  D:00E3H         SYMBOL        FCSERM
+  D:00E9H         SYMBOL        FCSP
+  D:00E5H         SYMBOL        FCSS
+  D:00E4H         SYMBOL        FCTKAS
+  B:00F8H.3       SYMBOL        FTM
+  D:00B8H         SYMBOL        GPR0
+  D:00B0H         SYMBOL        GPR1
+  D:00A8H         SYMBOL        GPR2
+  D:00F1H         SYMBOL        GPR3
+  D:00F2H         SYMBOL        GPR4
+  D:00F3H         SYMBOL        GPR5
+  D:00F5H         SYMBOL        GPR6
+  D:00F6H         SYMBOL        GPR7
+  D:00F7H         SYMBOL        GPR8
+  D:00F9H         SYMBOL        GPR9
+  D:00FAH         SYMBOL        GPRA
+  D:00FBH         SYMBOL        GPRB
+  D:00FCH         SYMBOL        GPRC
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/15/2016  08:10:42  PAGE 6
+
+
+  D:00FDH         SYMBOL        GPRD
+  D:00FEH         SYMBOL        GPRE
+  D:00FFH         SYMBOL        GPRF
+  D:009AH         SYMBOL        I2CD
+  B:00E8H.6       SYMBOL        I2CEN
+  B:00D8H.6       SYMBOL        I2CGCEN
+  D:009BH         SYMBOL        I2CS
+  B:00F8H.5       SYMBOL        IDLE
+  B:00E8H.0       SYMBOL        ITEN
+  B:00C0H.0       SYMBOL        ITIM_FLAG
+  B:00E8H.1       SYMBOL        ITINIT
+  D:00BBH         SYMBOL        ITPH
+  D:00BAH         SYMBOL        ITPL
+  D:00BCH         SYMBOL        ITPR
+  B:00E8H.2       SYMBOL        ITRD
+  D:00EEH         SYMBOL        JOKER
+  D:00EFH         SYMBOL        LBD
+  D:00BEH         SYMBOL        LDVREGCFG
+  B:0098H.4       SYMBOL        LFBBM0
+  B:0098H.5       SYMBOL        LFBBM1
+  D:00B1H         SYMBOL        LFBIAS
+  D:00B2H         SYMBOL        LFCDFLT
+  D:00B5H         SYMBOL        LFCDM0
+  D:00B3H         SYMBOL        LFCDM1
+  B:00C0H.5       SYMBOL        LFCD_FLAG
+  D:00B4H         SYMBOL        LFDIV
+  D:00A7H         SYMBOL        LFFDH
+  D:00A6H         SYMBOL        LFFDL
+  B:0098H.0       SYMBOL        LFONIND
+  D:00C6H         SYMBOL        LFOOT
+  D:00C5H         SYMBOL        LFOOTP
+  D:00CDH         SYMBOL        LFP0H
+  D:00CCH         SYMBOL        LFP0L
+  D:00CFH         SYMBOL        LFP1H
+  D:00CEH         SYMBOL        LFP1L
+  D:00C7H         SYMBOL        LFPCFG
+  B:00C0H.2       SYMBOL        LFPM0_FLAG
+  B:00C0H.3       SYMBOL        LFPM1_FLAG
+  D:00B7H         SYMBOL        LFRX0
+  D:00B6H         SYMBOL        LFRX1
+  D:00AFH         SYMBOL        LFRX2
+  D:0098H         SYMBOL        LFRXC
+  D:00A5H         SYMBOL        LFRXD
+  D:00A4H         SYMBOL        LFRXS
+  D:00A2H         SYMBOL        LFSOURCE
+  B:00C0H.4       SYMBOL        LFSY_FLAG
+  D:00BFH         SYMBOL        LPVREGTR
+  D:0084H         SYMBOL        MMR0
+  D:0085H         SYMBOL        MMR1
+  D:0086H         SYMBOL        MMR2
+  D:00D6H         SYMBOL        OSCCONF
+  D:00E6H         SYMBOL        OSCCONF2
+  D:00F4H         SYMBOL        OSCCONF3
+  D:0091H         SYMBOL        P1DIR
+  D:0092H         SYMBOL        P1IN
+  D:0090H         SYMBOL        P1OUT
+  D:0093H         SYMBOL        P1SENS
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/15/2016  08:10:42  PAGE 7
+
+
+  B:00D8H.3       SYMBOL        PDADC
+  B:00D8H.4       SYMBOL        PDLMB
+  B:00E8H.7       SYMBOL        PDWEN
+  B:00F8H.7       SYMBOL        PDWN
+  B:0090H.0       SYMBOL        PPO0
+  B:0090H.1       SYMBOL        PPO1
+  B:0090H.2       SYMBOL        PPO2
+  D:00D1H         SYMBOL        REF
+  B:00D8H.0       SYMBOL        RESET
+  D:00C8H         SYMBOL        RFC
+  D:00C9H         SYMBOL        RFD
+  D:00CAH         SYMBOL        RFENC
+  D:00DFH         SYMBOL        RFFSLD
+  D:00D7H         SYMBOL        RFFSPLL
+  D:00CBH         SYMBOL        RFS
+  D:00AEH         SYMBOL        RFTX
+  B:00E8H.4       SYMBOL        RFTXPEN
+  D:00DEH         SYMBOL        RFVCO
+  D:00ABH         SYMBOL        RNGD
+  B:00E8H.5       SYMBOL        RNGEN
+  B:00F8H.2       SYMBOL        STM
+  B:0098H.1       SYMBOL        SYNCIND
+  B:0088H.1       SYMBOL        T0FULL
+  B:0088H.0       SYMBOL        T0RUN
+  B:0088H.5       SYMBOL        T1FULL
+  B:0088H.4       SYMBOL        T1RUN
+  D:00BDH         SYMBOL        TMAX
+  B:00C0H.6       SYMBOL        TMAX_FLAG
+  B:00F8H.6       SYMBOL        TSHDWN
+  B:00C0H.7       SYMBOL        WDOG_FLAG
+  B:00D8H.1       SYMBOL        WDRES
+  D:00C0H         SYMBOL        WUF
+  D:00C1H         SYMBOL        WUM
+  D:00C4H         SYMBOL        XTAL0
+  D:00C3H         SYMBOL        XTAL1
+  C:4B1EH         LINE#         34
+  C:4B21H         LINE#         35
+  -------         ENDMOD        LIB_TRIGSUPPLYVOLTAGE
+
+  -------         MODULE        LIB_WAIT100USMULTIPLES
+  C:4B19H         SEGMENT       WAIT100USMULTIPLES
+  C:4B19H         PUBLIC        _WAIT100USMULTIPLES
+  C:4B19H         LINE#         30
+  C:4B1BH         LINE#         31
+  -------         ENDMOD        LIB_WAIT100USMULTIPLES
+
+  -------         MODULE        ?C?FPDIV
+  C:4009H         PUBLIC        ?C?FPDIV
+  -------         ENDMOD        ?C?FPDIV
+
+  -------         MODULE        ?C?FCAST
+  C:40B0H         PUBLIC        ?C?FCASTC
+  C:40ABH         PUBLIC        ?C?FCASTI
+  C:40A6H         PUBLIC        ?C?FCASTL
+  -------         ENDMOD        ?C?FCAST
+
+  -------         MODULE        PRINTF
+BL51 BANKED LINKER/LOCATER V6.22                                                      06/15/2016  08:10:42  PAGE 8
+
+
+  D:0022H         PUBLIC        ?_PRINTF?BYTE
+  D:0022H         PUBLIC        ?_SPRINTF?BYTE
+  C:45CCH         PUBLIC        _PRINTF
+  C:45C6H         PUBLIC        _SPRINTF
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        ?C?FPROUND
+  C:412EH         PUBLIC        ?C?FPROUND
+  -------         ENDMOD        ?C?FPROUND
+
+  -------         MODULE        ?C?FPCONVERT
+  C:415DH         PUBLIC        ?C?FPCONVERT
+  -------         ENDMOD        ?C?FPCONVERT
+
+  -------         MODULE        ?C?FPADD
+  C:4267H         PUBLIC        ?C?FPADD
+  C:4263H         PUBLIC        ?C?FPSUB
+  -------         ENDMOD        ?C?FPADD
+
+  -------         MODULE        ?C?FPMUL
+  C:4358H         PUBLIC        ?C?FPMUL
+  -------         ENDMOD        ?C?FPMUL
+
+  -------         MODULE        ?C?FTNPWR
+  C:448EH         PUBLIC        ?C?FTNPWR
+  -------         ENDMOD        ?C?FTNPWR
+
+  -------         MODULE        ?C?CLDPTR
+  C:44CEH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:44E7H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:4514H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?LNEG
+  C:4526H         PUBLIC        ?C?LNEG
+  -------         ENDMOD        ?C?LNEG
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:4534H         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?CCASE
+  C:4544H         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+Program Size: data=78.1 xdata=0 code=2859
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

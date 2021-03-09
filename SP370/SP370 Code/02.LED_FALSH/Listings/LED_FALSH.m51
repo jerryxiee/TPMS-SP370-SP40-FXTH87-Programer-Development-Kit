@@ -1,0 +1,94 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        10/21/2016  09:01:58  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj, .\Objects\STARTUP.obj, .\include\SP37_ROMLibrary.LIB TO .\Objects\LED_FA
+>> LSH PRINT (.\Listings\LED_FALSH.m51) RAMSIZE (256) CODE (0X4000-0X57FF)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  .\Objects\STARTUP.obj (SEG_C_STARTUP)
+  .\include\SP37_ROMLibrary.LIB (LIB_WAIT100USMULTIPLES)
+
+
+LINK MAP OF MODULE:  .\Objects\LED_FALSH (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+                    0008H     0098H                  *** GAP ***
+            IDATA   00A0H     0020H     ABSOLUTE     
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+                    0000H     4000H                  *** GAP ***
+            CODE    4000H     0006H     ABSOLUTE     
+            CODE    4006H     001EH     UNIT         ?PR?MAIN?MAIN
+            CODE    4024H     0005H     UNIT         WAIT100USMULTIPLES
+                    4029H     17D1H                  *** GAP ***
+            CODE    57FAH     0003H     ABSOLUTE     
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\LED_FALSH (MAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\LED_FALSH (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:4006H         PUBLIC        MAIN
+  D:0093H         PUBLIC        P1SENS
+  D:0091H         PUBLIC        P1DIR
+  D:0090H         PUBLIC        P1OUT
+  -------         PROC          MAIN
+  C:4006H         LINE#         25
+  C:4006H         LINE#         26
+  C:4006H         LINE#         27
+BL51 BANKED LINKER/LOCATER V6.22                                                      10/21/2016  09:01:58  PAGE 2
+
+
+  C:4009H         LINE#         28
+  C:400CH         LINE#         29
+  C:400EH         LINE#         31
+  C:400EH         LINE#         32
+  C:400EH         LINE#         33
+  C:4011H         LINE#         34
+  C:4018H         LINE#         38
+  C:401BH         LINE#         39
+  C:4022H         LINE#         40
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        SEG_C_STARTUP
+  C:4000H         PUBLIC        ?C_STARTUP
+  I:00A0H         SYMBOL        ?STACK
+  N:0000H         SYMBOL        SEG_C_STARTUP
+  D:0081H         SYMBOL        SP
+  C:4000H         LINE#         84
+  C:4003H         LINE#         85
+  -------         ENDMOD        SEG_C_STARTUP
+
+  -------         MODULE        LIB_WAIT100USMULTIPLES
+  C:4024H         SEGMENT       WAIT100USMULTIPLES
+  C:4024H         PUBLIC        _WAIT100USMULTIPLES
+  C:4024H         LINE#         30
+  C:4026H         LINE#         31
+  -------         ENDMOD        LIB_WAIT100USMULTIPLES
+
+Program Size: data=40.0 xdata=0 code=44
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

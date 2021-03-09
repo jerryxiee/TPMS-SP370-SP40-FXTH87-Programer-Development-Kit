@@ -1,0 +1,237 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/12/2016  18:24:52  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj, .\Objects\STARTUP.obj, .\Objects\uart.obj, .\include\SP37_ROMLibrary.LIB
+>>  TO .\Objects\WU PRINT (.\Listings\WU.m51) RAMSIZE (256) CODE (0X4000-0X57FF)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  .\Objects\STARTUP.obj (SEG_C_STARTUP)
+  .\Objects\uart.obj (UART)
+  .\include\SP37_ROMLibrary.LIB (LIB_POWERDOWN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (PRINTF)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CSTPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?PLDIIDATA)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CCASE)
+
+
+LINK MAP OF MODULE:  .\Objects\WU (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0014H     UNIT         _DATA_GROUP_
+                    001CH     0004H                  *** GAP ***
+            BIT     0020H.0   0001H.1   UNIT         _BIT_GROUP_
+                    0021H.1   00F0H.7                *** GAP ***
+            IDATA   00A0H     0020H     ABSOLUTE     
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+                    0000H     4000H                  *** GAP ***
+            CODE    4000H     0006H     ABSOLUTE     
+            CODE    4006H     035CH     UNIT         ?PR?PRINTF?PRINTF
+            CODE    4362H     008EH     UNIT         ?C?LIB_CODE
+            CODE    43F0H     0052H     UNIT         ?PR?_PUTCHAR?UART
+            CODE    4442H     0028H     UNIT         ?PR?MAIN?MAIN
+            CODE    446AH     000EH     UNIT         ?PR?UART_INIT?UART
+            CODE    4478H     000CH     UNIT         ?CO?MAIN
+            CODE    4484H     000BH     UNIT         ?PR?_PP2?UART
+            CODE    448FH     0003H     UNIT         POWDWN
+                    4492H     1368H                  *** GAP ***
+            CODE    57FAH     0003H     ABSOLUTE     
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\WU (MAIN)
+
+
+SEGMENT                           BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH     START    LENGTH
+------------------------------------------------------------------
+?PR?MAIN?MAIN                  -----    -----      -----    -----
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2016  18:24:52  PAGE 2
+
+
+  +--> ?PR?UART_INIT?UART
+  +--> ?CO?MAIN
+  +--> ?PR?PRINTF?PRINTF
+
+?PR?UART_INIT?UART             -----    -----      -----    -----
+  +--> ?PR?_PP2?UART
+
+?PR?PRINTF?PRINTF              0020H.0  0001H.1    0008H    0014H
+  +--> ?PR?_PUTCHAR?UART
+
+?PR?_PUTCHAR?UART              -----    -----      -----    -----
+  +--> ?PR?_PP2?UART
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\WU (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00F5H         PUBLIC        GPR6
+  C:4442H         PUBLIC        MAIN
+  D:00BBH         PUBLIC        ITPH
+  D:00BAH         PUBLIC        ITPL
+  D:00BCH         PUBLIC        ITPR
+  D:00C0H         PUBLIC        WUF
+  -------         PROC          MAIN
+  C:4442H         LINE#         28
+  C:4442H         LINE#         29
+  C:4442H         LINE#         30
+  C:4446H         LINE#         33
+  C:4449H         LINE#         34
+  C:444CH         LINE#         35
+  C:444CH         LINE#         38
+  C:444EH         LINE#         44
+  C:445EH         LINE#         50
+  C:4461H         LINE#         51
+  C:4464H         LINE#         52
+  C:4467H         LINE#         56
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        SEG_C_STARTUP
+  C:4000H         PUBLIC        ?C_STARTUP
+  I:00A0H         SYMBOL        ?STACK
+  N:0000H         SYMBOL        SEG_C_STARTUP
+  D:0081H         SYMBOL        SP
+  C:4000H         LINE#         83
+  C:4003H         LINE#         84
+  -------         ENDMOD        SEG_C_STARTUP
+
+  -------         MODULE        UART
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:446AH         PUBLIC        Uart_Init
+  B:00F8H.5       PUBLIC        IDLE
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2016  18:24:52  PAGE 3
+
+
+  D:0089H         PUBLIC        TMOD
+  B:0088H.1       PUBLIC        T0FULL
+  D:0093H         PUBLIC        P1SENS
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  C:4484H         SYMBOL        _PP2
+  D:0091H         PUBLIC        P1DIR
+  D:0090H         PUBLIC        P1OUT
+  B:0088H.0       PUBLIC        T0RUN
+  C:43F0H         PUBLIC        _putchar
+  -------         PROC          UART_INIT
+  C:446AH         LINE#         17
+  C:446AH         LINE#         18
+  C:446AH         LINE#         21
+  C:446DH         LINE#         22
+  C:4470H         LINE#         23
+  C:4473H         LINE#         25
+  -------         ENDPROC       UART_INIT
+  -------         PROC          _PP2
+  D:0007H         SYMBOL        HIGH_Or_LOW
+  C:4484H         LINE#         28
+  C:4484H         LINE#         29
+  C:4484H         LINE#         30
+  C:4487H         LINE#         31
+  C:448BH         LINE#         33
+  C:448EH         LINE#         34
+  -------         ENDPROC       _PP2
+  -------         PROC          _PUTCHAR
+  D:0006H         SYMBOL        char_to_send
+  -------         DO            
+  D:0002H         SYMBOL        i
+  D:0005H         SYMBOL        TMOD_old
+  D:0003H         SYMBOL        TL0_old
+  D:0004H         SYMBOL        TH0_old
+  -------         ENDDO         
+  C:43F0H         LINE#         36
+  C:43F2H         LINE#         37
+  C:43F2H         LINE#         42
+  C:43F4H         LINE#         43
+  C:43F6H         LINE#         44
+  C:43F8H         LINE#         46
+  C:43FBH         LINE#         49
+  C:43FEH         LINE#         50
+  C:4401H         LINE#         53
+  C:4406H         LINE#         54
+  C:4408H         LINE#         55
+  C:440AH         LINE#         56
+  C:440CH         LINE#         59
+  C:4410H         LINE#         60
+  C:4412H         LINE#         61
+  C:4414H         LINE#         64
+  C:4416H         LINE#         65
+  C:4416H         LINE#         66
+  C:441AH         LINE#         67
+  C:441EH         LINE#         69
+  C:4423H         LINE#         70
+  C:4427H         LINE#         71
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/12/2016  18:24:52  PAGE 4
+
+
+  C:4429H         LINE#         72
+  C:442BH         LINE#         73
+  C:442FH         LINE#         76
+  C:4434H         LINE#         77
+  C:4436H         LINE#         78
+  C:4438H         LINE#         81
+  C:443AH         LINE#         82
+  C:443CH         LINE#         83
+  C:443EH         LINE#         84
+  C:4440H         LINE#         86
+  C:4441H         LINE#         87
+  -------         ENDPROC       _PUTCHAR
+  -------         ENDMOD        UART
+
+  -------         MODULE        LIB_POWERDOWN
+  C:448FH         SEGMENT       POWDWN
+  C:448FH         PUBLIC        POWERDOWN
+  C:448FH         LINE#         32
+  -------         ENDMOD        LIB_POWERDOWN
+
+  -------         MODULE        PRINTF
+  D:0008H         PUBLIC        ?_PRINTF517?BYTE
+  D:0008H         PUBLIC        ?_PRINTF?BYTE
+  D:0008H         PUBLIC        ?_SPRINTF517?BYTE
+  D:0008H         PUBLIC        ?_SPRINTF?BYTE
+  C:4068H         PUBLIC        _PRINTF
+  C:4068H         PUBLIC        _PRINTF517
+  C:4062H         PUBLIC        _SPRINTF
+  C:4062H         PUBLIC        _SPRINTF517
+  -------         ENDMOD        PRINTF
+
+  -------         MODULE        ?C?CLDPTR
+  C:4362H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:437BH         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTPTR
+  C:43A8H         PUBLIC        ?C?CSTPTR
+  -------         ENDMOD        ?C?CSTPTR
+
+  -------         MODULE        ?C?PLDIIDATA
+  C:43BAH         PUBLIC        ?C?PLDIIDATA
+  -------         ENDMOD        ?C?PLDIIDATA
+
+  -------         MODULE        ?C?CCASE
+  C:43CAH         PUBLIC        ?C?CCASE
+  -------         ENDMOD        ?C?CCASE
+
+Program Size: data=61.1 xdata=0 code=1173
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
